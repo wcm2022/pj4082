@@ -10,6 +10,7 @@
 <v t="leo.20210411132449.2"><vh>@data qt-gui-plugin-style-sheet</vh></v>
 <v t="leo.20210411132449.3"><vh>@string initial_split_orientation = horizontal</vh></v>
 </v>
+<v t="leo.20210411135810.1"><vh>Project 4082</vh></v>
 <v t="leo.20210411132229.1"><vh>recursive importer</vh></v>
 </vnodes>
 <tnodes>
@@ -99,5 +100,17 @@ QLineEdit#editorLabel {
 }</t>
 <t tx="leo.20210411132449.3">horizontal: body pane to the left
 vertical: body pane on the botton</t>
+<t tx="leo.20210411135810.1">組員:
+
+40823116
+40823131
+40823152
+40823153
+
+專題動機:
+
+https://github.com/mdecourse/RobotSimulator 已經利用 PyQt5 與 PyOpenGL 建立一個能夠讀取 Gcode 並執行基本流程模擬的套件, 由於原始套件並沒有宣告 license, 在此承接此一專案進行修改, 將要採用 AGPL 使用授權.
+
+階段一的任務將要建立 6 軸工業機器人的 xml 與零組件 stl 檔案間的整合.</t>
 </tnodes>
 </leo_file>
