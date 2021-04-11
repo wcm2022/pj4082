@@ -25,7 +25,7 @@ class createtriangle:
       
         #triangles normal
         self.normal=createpoint(self.calculate_normal(self.points[0],self.points[1],self.points[2]))#(0,1,0)#
-  
+      
     #calculate vector / edge
     def calculate_vector(self,p1,p2):
         return -p1.x+p2.x,-p1.y+p2.y,-p1.z+p2.z
@@ -35,7 +35,7 @@ class createtriangle:
         b=self.calculate_vector(p3,p1)
         #calculate the cross product returns a vector
         return self.cross_product(a,b)    
-  
+      
     def cross_product(self,p1,p2):
         return (p1[1]*p2[2]-p2[1]*p1[2]) , (p1[2]*p2[0])-(p2[2]*p1[0]) , (p1[0]*p2[1])-(p2[0]*p1[1])
 
@@ -58,7 +58,7 @@ class loader:
             glVertex3f(tri.points[1].x,tri.points[1].y,tri.points[1].z)
             glVertex3f(tri.points[2].x,tri.points[2].y,tri.points[2].z)
         glEnd()
-  
+      
     #load stl file detects if the file is a text file or binary file
     def load_stl(self,filename):
         #read start of file to determine if its a binay stl file or a ascii stl file
@@ -72,7 +72,7 @@ class loader:
         else:
             # print ("reading binary stl file "+str(filename))
             self.load_binary_stl(filename)
-  
+      
     #read text stl match keywords to grab the points to build the model
     def load_text_stl(self,filename):
         fp=open(filename,'r')
