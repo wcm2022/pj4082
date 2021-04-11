@@ -11,6 +11,7 @@
 <v t="leo.20210411132449.3"><vh>@string initial_split_orientation = horizontal</vh></v>
 </v>
 <v t="leo.20210411135810.1"><vh>Project 4082</vh></v>
+<v t="leo.20210411161804.1"><vh>Heroku site</vh></v>
 <v t="leo.20210411151110.1"><vh>PyQt5, Pyside2 or Pysimplegui</vh></v>
 <v t="leo.20210411154008.1"><vh>PySimpleGUI</vh>
 <v t="leo.20210411153333.1"><vh>@path pysimplegui_ex</vh>
@@ -1976,5 +1977,20 @@ Bridging the "GUI Gap"
 Python has brought a large number of people into the programming community. The number of programs and the range of areas it touches is mindboggling. But more often than not, these and technologies are out of reach of all but a handful of people. The majority of Python programs are "command line" based. This isn't a problem for programmer-types as we're all used to interacting with computers through a text interface. While programmers don't have a problem with command-line interfaces, most "normal people" do. This creates a digital divide, a "GUI Gap".
 
 Adding a GUI to a program opens that program up to a wider audience. It becomes more approachable. GUIs can also make interacting with some programs easier, even for those that are comfortable with a command-line interface. And finally, some problems require a GUI.</t>
+<t tx="leo.20210411161804.1">https://pj4082.herokuapp.com 以 4082pj AT mde 綁定
+
+透過 heroku login -i 取得 y:\home_ipv6\_netrc
+
+並且利用 heroku git:remote -a pj4082 設定 git remote add
+
+之後在近端 pj4082/.git/config 將會增加
+
+[remote "heroku"]
+	url = https://git.heroku.com/pj4082.git
+	fetch = +refs/heads/*:refs/remotes/heroku/*
+    
+也就是以 heroku 代表 https://git.heroku.com/pj4082.git
+
+因此改版至 Github 之後, 以 git push heroku 就可以將改版資料送到 Heroku 對應倉儲.</t>
 </tnodes>
 </leo_file>
