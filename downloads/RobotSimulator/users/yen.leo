@@ -14,7 +14,7 @@
 <v t="leo.20210411161804.1"><vh>Heroku site</vh></v>
 <v t="leo.20210411151110.1"><vh>PyQt5, Pyside2 or Pysimplegui</vh></v>
 <v t="leo.20210411154008.1"><vh>PySimpleGUI</vh>
-<v t="leo.20210411153333.1"><vh>@path pysimplegui_ex</vh>
+<v t="leo.20210411153333.1"><vh>@path ./../pysimplegui_ex</vh>
 <v t="leo.20210411153340.1"><vh>@clean hello_world.py</vh>
 <v t="leo.20210411153407.1"><vh>Declarations (hello_world.py)</vh></v>
 </v>
@@ -32,7 +32,7 @@
 </v>
 </v>
 </v>
-<v t="leo.20210411211731.1"><vh>@path ..</vh>
+<v t="leo.20210411211731.1"><vh>@path ./../../</vh>
 <v t="leo.20210411211751.1"><vh>@edit dh_coding_1.py</vh></v>
 <v t="leo.20210411212006.1"><vh>@edit dh_coding_2.py</vh></v>
 <v t="leo.20210411212154.1"><vh>@edit dh_coding_3.py</vh></v>
@@ -40,11 +40,11 @@
 <v t="leo.20210411151136.1"><vh>import source code</vh>
 <v t="leo.20210411132229.1"><vh>recursive importer</vh></v>
 </v>
-<v t="leo.20210411145736.1"><vh>@path Robots</vh>
+<v t="leo.20210411145736.1"><vh>@path ./../Robots</vh>
 <v t="leo.20210411145758.1"><vh>@edit ABB_IRB120.xml</vh></v>
 </v>
 <v t="leo.20210411145610.1"><vh>imported files</vh>
-<v t="leo.20210411145610.2"><vh>@path ./</vh>
+<v t="leo.20210411145610.2"><vh>@path ./../</vh>
 <v t="leo.20210411145610.3"><vh>@clean ConfigRobot.py</vh>
 <v t="leo.20210411145610.4"><vh>Declarations</vh></v>
 <v t="leo.20210411145610.5"><vh>class ConfigRobot(object)</vh>
@@ -165,7 +165,7 @@
 </v>
 </v>
 <v t="leo.20210411145610.102"><vh>@path Cad</vh></v>
-<v t="leo.20210411145610.109"><vh>@path py_ex</vh>
+<v t="leo.20210411145610.109"><vh>@path ./</vh>
 <v t="leo.20210411145610.110"><vh>@clean bin_to_ascii.py</vh>
 <v t="leo.20210411145610.111"><vh>Declarations</vh></v>
 <v t="leo.20210411145610.112"><vh>load_binary_stl</vh></v>
