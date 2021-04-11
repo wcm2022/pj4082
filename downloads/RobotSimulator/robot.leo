@@ -32,6 +32,11 @@
 </v>
 </v>
 </v>
+<v t="leo.20210411211731.1"><vh>@path ..</vh>
+<v t="leo.20210411211751.1"><vh>@edit dh_coding_1.py</vh></v>
+<v t="leo.20210411212006.1"><vh>@edit dh_coding_2.py</vh></v>
+<v t="leo.20210411212154.1"><vh>@edit dh_coding_3.py</vh></v>
+</v>
 <v t="leo.20210411151136.1"><vh>import source code</vh>
 <v t="leo.20210411132229.1"><vh>recursive importer</vh></v>
 </v>
@@ -1992,5 +1997,6 @@ Adding a GUI to a program opens that program up to a wider audience. It becomes 
 也就是以 heroku 代表 https://git.heroku.com/pj4082.git
 
 因此改版至 Github 之後, 以 git push heroku 就可以將改版資料送到 Heroku 對應倉儲.</t>
+<t tx="leo.20210411211731.1"></t>
 </tnodes>
 </leo_file>
