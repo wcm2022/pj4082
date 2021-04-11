@@ -1,22 +1,9 @@
 <h1>About</h1>
-<p>Repository: <a href="https://github.com/mdecourse/cmstemplate">https://github.com/mdecourse/cmstemplate</a></p>
-<p>Github Pages: <a href="https://mde.tw/cmstemplate">https://mde.tw/cmstemplate</a></p>
-<p>利用 cmstemplate 建立以 CMSiMDE 作為子模組的動態與靜態網站方法為:</p>
-<ol>
-<li>登入 Github 帳號</li>
-<li>將瀏覽器指向 <a href="https://github.com/mdecourse/cmstemplate">https://github.com/mdecourse/cmstemplate</a></li>
-<li>利用 <span style="background-color: #00ff00;">Use this template</span> 按鈕建立倉儲</li>
-</ol>
-<p>clone 帶有 CMSiMDE 的指令:</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">git clone --recurse-submodules URL</pre>
-<p>上述 URL 即為希望將倉儲資料取下進行改版的 Github 倉儲網路統一資源位置, 也就是 Github 倉儲網址.</p>
-<p>每一個以 cmstemplate 為 template 的倉儲, 其根目錄都帶有:</p>
-<ol>
-<li><span style="background-color: #ffff99;">init.py</span> - 其中的 site_title, ip 與 port 可以讓使用者自行修改, site_title 是網站標題, ip 為動態網站啟動時所使用的網路位址, 可設為內部或外部 IPv4 (IPv6), port 則是動態網站啟動時所佔用的埠號.</li>
-<li><span style="background-color: #ffff99;">http-server.py</span> - 執行後會使用內建的 localhost 與 port 8444 伺服 content 子目錄中的 CMSiMDE 靜態網頁.</li>
-<li><span style="background-color: #ffff99;">cms.bat</span> - 讓使用者執行動態網站用的批次檔案.</li>
-<li><span style="background-color: #ffff99;">acp.bat</span> - 若使用者已經將倉儲設為 ssh 連線, 且提供遠端與近端的認證模式, 則可以在執行此批次指令之後加上提交字串, 即可執行 git add ., git commit -m "提交訊息", 以及 git push 等三個指令.</li>
-</ol><h1>CMSiMDE</h1>
+<p>Repository: <a href="https://github.com/mdecourse/4082pj">https://github.com/mdecourse/4082pj</a></p>
+<p>Github Pages: <a href="https://mde.tw/4082pj">https://mde.tw/4082pj</a></p>
+<p>Discussion: <a href="https://github.com/mdecourse/4082pj/discussion">https://github.com/mdecourse/4082pj/discussion</a></p>
+<h4>組員:</h4>
+<p style="padding-left: 30px;">40823116<br/>40823131<br/>40823152<br/>40823153</p><h1>CMSiMDE</h1>
 <p>CMSiMDE (<a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a>) 是一套以 Python 與 Flask 框架編寫的網際內容管理系統,</p>
 <p>使用 CMSiMDE 建議使用者安裝 flask flask_cors bs4 lxml pelican markdown leo 等模組. 其中的 flask flask_cors bs4 lxml pelican markdown為啟動 CMSiMDE 的必要模組, 而 leo 則是 CMSMDE 開發者所使用的大綱管理工具, 可以用於與 CMSiMDE 整合的 Pelican blog 及 Reveal.js 網際簡報編輯之用.</p>
 <h2>基本操作</h2>
@@ -202,13 +189,14 @@ variables:
 <p>cmsimde 應該要導入更多動態零組件展示與互動相關的機械設計功能.</p>
 <p>可以著力的方向:</p>
 <p style="padding-left: 30px;"><a href="http://help.autodesk.com/view/fusion360/ENU/?guid=GUID-1C665B4D-7BF7-4FDF-98B0-AA7EE12B5AC2">Fusion 360 </a></p>
-<p style="padding-left: 60px;"><a href="https://github.com/AutodeskFusion360">https://github.com/AutodeskFusion360</a> </p>
+<p style="padding-left: 60px;"><a href="https://github.com/AutodeskFusion360">https://github.com/AutodeskFusion360</a></p>
 <p style="padding-left: 30px;"><a href="https://stromberg.dnsalias.org/~strombrg/pybrowser/python-browser.html">https://stromberg.dnsalias.org/~strombrg/pybrowser/python-browser.html</a></p>
 <p style="padding-left: 30px;"><a href="https://vpython.org/">https://vpython.org/</a></p>
 <p style="padding-left: 30px;"><a href="https://www.glowscript.org/">https://www.glowscript.org/</a></p>
 <p style="padding-left: 30px;"><a href="https://github.com/slembcke/Chipmunk2D">https://github.com/slembcke/Chipmunk2D</a></p>
 <p style="padding-left: 60px;"><a href="http://www.pymunk.org/en/latest/">http://www.pymunk.org/en/latest/</a></p>
-<p style="padding-left: 30px;"><a href="https://github.com/mrjleo/python-physics-demos">https://github.com/mrjleo/python-physics-demos</a></p><h3>IPv6</h3>
+<p style="padding-left: 30px;"><a href="https://github.com/mrjleo/python-physics-demos">https://github.com/mrjleo/python-physics-demos</a></p>
+<p style="padding-left: 30px;">cango3d library: <a href="https://www.arc.id.au/Canvas3DGraphics.html">https://www.arc.id.au/Canvas3DGraphics.html</a></p><h3>IPv6</h3>
 <p>參考: <a href="https://github.com/tinymce/tinymce/issues/4409">https://github.com/tinymce/tinymce/issues/4409</a> 中的 <a href="https://github.com/tinymce/tinymce/issues/4409#issuecomment-680282550">url parsing 修改</a>後, 目前已經可以在 local 與 IPv6 網路連線中啟用 tinymce4 editor.</p>
 <h3>MathJax</h3>
 <p>MathJax 引用問題:</p>

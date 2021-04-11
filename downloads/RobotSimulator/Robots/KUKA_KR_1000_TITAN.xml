@@ -1,0 +1,24 @@
+<robot_definition>
+<robot_dk name=KUKA_KR_1000_TITAN>
+<axis id="Base" maxvalue="0" minvalue="0" alpha="0" a="0" theta="0" d="0"/>
+<axis id="Joint1" limsup="150.000" liminf="-150.000" alpha="0.000" a="0.000" theta="0.000" d="1100.000"/>
+<axis id="Joint2" limsup="17.500" liminf="-130.000" alpha="-90.000" a="600.000" theta="0.000" d="0.000"/>
+<axis id="Joint3" limsup="145.000" liminf="-110.000" alpha="0.000" a="1400.000" theta="-90.000" d="0.000"/>
+<axis id="Joint4" limsup="350.000" liminf="-350.000" alpha="-90.000" a="65.000" theta="0.000" d="1200.000"/>
+<axis id="Joint5" limsup="118.000" liminf="-118.000" alpha="90.000" a="0.000" theta="0.000" d="0.000"/>
+<axis id="Joint6" limsup="350.000" liminf="-350.000" alpha="-90.000" a="0.000" theta="180.000" d="372.000"/>
+</robot_dk>
+<robot_geometry>
+<geometry geo="KUKA_KR_1000_TITAN-0" name="Base"/>
+<geometry geo="KUKA_KR_1000_TITAN-1" name="Joint1"/>
+<geometry geo="KUKA_KR_1000_TITAN-2" name="Joint2"/>
+<geometry geo="KUKA_KR_1000_TITAN-3" name="Joint3"/>
+<geometry geo="KUKA_KR_1000_TITAN-4" name="Joint4"/>
+<geometry geo="KUKA_KR_1000_TITAN-5" name="Joint5"/>
+<geometry geo="KUKA_KR_1000_TITAN-6" name="Joint6"/>
+</robot_geometry>
+<CAD_base x="0.000" y="0.000" z="0.000" rx="0.000" ry="0.000" rz="0.000"/>
+<CAD_scale FACTOR="1.000000000"/>
+<CAD_offsets cad_theta1="0.000" cad_theta2="-90.000" cad_theta3="90.000" cad_theta4="0.000" cad_theta5="0.000" cad_theta6="0.000"/>
+<Angle_Type id="5"/>
+</robot_definition>

@@ -1,0 +1,24 @@
+<robot_definition>
+<robot_dk name=PUMA_560>
+<axis id="Base" maxvalue="0" minvalue="0" alpha="0" a="0" theta="0" d="0"/>
+<axis id="Joint1" limsup="160.000" liminf="-160.000" alpha="0.000" a="0.000" theta="0.000" d="0.000"/>
+<axis id="Joint2" limsup="70.000" liminf="-180.000" alpha="-90.000" a="0.000" theta="0.000" d="139.700"/>
+<axis id="Joint3" limsup="220.000" liminf="-45.000" alpha="0.000" a="431.800" theta="-180.000" d="0.000"/>
+<axis id="Joint4" limsup="150.000" liminf="-150.000" alpha="-90.000" a="0.000" theta="0.000" d="433.700"/>
+<axis id="Joint5" limsup="100.000" liminf="-100.000" alpha="90.000" a="0.000" theta="0.000" d="0.000"/>
+<axis id="Joint6" limsup="266.000" liminf="-266.000" alpha="-90.000" a="0.000" theta="180.000" d="55.880"/>
+</robot_dk>
+<robot_geometry>
+<geometry geo="PUMA_560-0" name="Base"/>
+<geometry geo="PUMA_560-1" name="Joint1"/>
+<geometry geo="PUMA_560-2" name="Joint2"/>
+<geometry geo="PUMA_560-3" name="Joint3"/>
+<geometry geo="PUMA_560-4" name="Joint4"/>
+<geometry geo="PUMA_560-5" name="Joint5"/>
+<geometry geo="PUMA_560-6" name="Joint6"/>
+</robot_geometry>
+<CAD_base x="0.000" y="-10.000" z="623.570" rx="0.000" ry="0.000" rz="0.000"/>
+<CAD_scale FACTOR="1.000000000"/>
+<CAD_offsets cad_theta1="0.000" cad_theta2="0.000" cad_theta3="0.000" cad_theta4="0.000" cad_theta5="0.000" cad_theta6="0.000"/>
+<Angle_Type id="1"/>
+</robot_definition>

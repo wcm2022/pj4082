@@ -1,0 +1,24 @@
+<robot_definition>
+<robot_dk name=KUKA_KR_6_R900_sixx>
+<axis id="Base" maxvalue="0" minvalue="0" alpha="0" a="0" theta="0" d="0"/>
+<axis id="Joint1" limsup="170.000" liminf="-170.000" alpha="0.000" a="0.000" theta="0.000" d="400.000"/>
+<axis id="Joint2" limsup="45.000" liminf="-190.000" alpha="-90.000" a="25.000" theta="0.000" d="0.000"/>
+<axis id="Joint3" limsup="156.000" liminf="-120.000" alpha="0.000" a="455.000" theta="-90.000" d="0.000"/>
+<axis id="Joint4" limsup="185.000" liminf="-185.000" alpha="-90.000" a="35.000" theta="0.000" d="420.000"/>
+<axis id="Joint5" limsup="120.000" liminf="-120.000" alpha="90.000" a="0.000" theta="0.000" d="0.000"/>
+<axis id="Joint6" limsup="350.000" liminf="-350.000" alpha="-90.000" a="0.000" theta="180.000" d="80.000"/>
+</robot_dk>
+<robot_geometry>
+<geometry geo="KUKA_KR_6_R900_sixx-0" name="Base"/>
+<geometry geo="KUKA_KR_6_R900_sixx-1" name="Joint1"/>
+<geometry geo="KUKA_KR_6_R900_sixx-2" name="Joint2"/>
+<geometry geo="KUKA_KR_6_R900_sixx-3" name="Joint3"/>
+<geometry geo="KUKA_KR_6_R900_sixx-4" name="Joint4"/>
+<geometry geo="KUKA_KR_6_R900_sixx-5" name="Joint5"/>
+<geometry geo="KUKA_KR_6_R900_sixx-6" name="Joint6"/>
+</robot_geometry>
+<CAD_base x="0.000" y="0.000" z="0.000" rx="0.000" ry="0.000" rz="0.000"/>
+<CAD_scale FACTOR="1.000000000"/>
+<CAD_offsets cad_theta1="0.000" cad_theta2="0.000" cad_theta3="0.000" cad_theta4="0.000" cad_theta5="0.000" cad_theta6="0.000"/>
+<Angle_Type id="5"/>
+</robot_definition>
