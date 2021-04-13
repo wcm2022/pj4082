@@ -1,0 +1,11 @@
+Webots Proto Cache File version 1.5
+protoFileHash: 3fb802fab659404d1adfe45acac16867
+needsRobotAncestor: 1
+baseType: Robot
+slotType: 
+parameters: translation,rotation,controller,name
+tags: 
+license:  No copyright, 2020 Garth Zeglin.  This file is explicitly placed in the public domain.
+licenseUrl: 
+documentationUrl: https://courses.ideate.cmu.edu/16-375
+info: Large\sclock\swith\shour\sand\sminute\shands\sfor\scourse\sexercises.\s\sThe\sbezel,\shour\nhand,\sand\sminute\shand\swere\sdrawn\sin\sCAD\sin\sthe\sreference\sframe\sof\sthe\srobot.\nThe\sobject\sshapes\swere\simported\sas\sSTL\sfiles,\sand\sobject\sphysics\sparameters\ncalculated\sby\sthe\sCAD\ssystem.\s\sNo\sbounding\sobjects\sare\sspecified.\nThe\s'bezel'\sbase\sdoes\snot\shave\sa\sphysics\snode.\n

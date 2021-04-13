@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>two-link-kinematics.py — Robotics for Creative Practice - Fall 2020</title>
+    <link rel="stylesheet" href="two-link-kinematics.py%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/haiku.css" type="text/css">
+    <link rel="stylesheet" href="two-link-kinematics.py%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/pygments.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="two-link-kinematics.py%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/graphviz.css">
+    <link rel="stylesheet" href="two-link-kinematics.py%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/guide.css" type="text/css">
+    <script id="documentation_options" data-url_root="../../" src="two-link-kinematics.py%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/documentation_options.js"></script>
+    <script src="two-link-kinematics.py%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/jquery.js"></script>
+    <script src="two-link-kinematics.py%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/underscore.js"></script>
+    <script src="two-link-kinematics.py%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/doctools.js"></script>
+    <script src="two-link-kinematics.py%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/language_data.js"></script>
+    <link rel="index" title="Index" href="https://courses.ideate.cmu.edu/16-375/f2020/text/genindex.html">
+    <link rel="search" title="Search" href="https://courses.ideate.cmu.edu/16-375/f2020/text/search.html">
+    <link rel="next" title="MQTT Monitor (PyQt5)" href="https://courses.ideate.cmu.edu/16-375/f2020/text/code/MQTT-Monitor.html">
+    <link rel="prev" title="two-link-ik.py" href="https://courses.ideate.cmu.edu/16-375/f2020/text/code/lecture-samples/two-link-ik.html"> 
+  </head><body>
+      <div class="header" role="banner"><h1 class="heading"><a href="https://courses.ideate.cmu.edu/16-375/f2020/text/index.html">
+          <span>Robotics for Creative Practice - Fall 2020</span></a></h1>
+        <h2 class="heading"><span>two-link-kinematics.py</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&nbsp;&nbsp;<a href="https://courses.ideate.cmu.edu/16-375/f2020/text/code/lecture-samples/two-link-ik.html">two-link-ik.py</a>
+        &nbsp;&nbsp;::&nbsp;&nbsp;
+        <a class="uplink" href="https://courses.ideate.cmu.edu/16-375/f2020/text/index.html">Contents</a>
+        &nbsp;&nbsp;::&nbsp;&nbsp;
+        <a href="https://courses.ideate.cmu.edu/16-375/f2020/text/code/MQTT-Monitor.html">MQTT Monitor (PyQt5)</a>&nbsp;&nbsp;»
+        </p>
+
+      </div>
+      <div class="content" role="main">
+        
+        
+  <div class="section" id="two-link-kinematics-py">
+<h1>two-link-kinematics.py<a class="headerlink" href="#two-link-kinematics-py" title="Permalink to this headline">¶</a></h1>
+<p>This script demonstrates the symbolic derivation of equations for forward and
+inverse kinematics for a planar two-link arm.  It uses <a class="reference external" href="https://www.sympy.org/">SymPy</a>, a symbolic
+algebra package for Python, to solve the equations.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">"""Kinematics calculations for a two-link serial chain (e.g., double-pendulum).</span>
+
+<span class="sd">Given the link lengths, calculate the endpoint positions.</span>
+
+<span class="sd">Note that since this is a serial drive mechanism, the forward kinematics is</span>
+<span class="sd">simpler than the inverse kinematics.</span>
+
+<span class="sd">Q0:     shoulder angle in radians, zero pointing down, positive is CCW</span>
+<span class="sd">Q1:     elbow angle in radians relative to upper link, zero pointing down, positive is CCW</span>
+
+<span class="sd">"""</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+
+<span class="c1">##### forward kinematics #############</span>
+<span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">q0</span><span class="p">,</span> <span class="n">q1</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'L1 L2 x y q0 q1 theta'</span><span class="p">)</span>
+
+<span class="c1"># The elbow location is uniquely by the shoulder angle q0.</span>
+<span class="n">elbow</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">L1</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">q0</span><span class="p">),</span> <span class="o">-</span><span class="n">L1</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">q0</span><span class="p">)])</span>
+
+<span class="c1"># The endpoint location locus is a circle centered on the elbow.</span>
+<span class="n">endpoint</span> <span class="o">=</span> <span class="n">elbow</span> <span class="o">+</span> <span class="n">sym</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">L2</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">q0</span><span class="o">+</span><span class="n">q1</span><span class="p">),</span> <span class="o">-</span><span class="n">L2</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">q0</span><span class="o">+</span><span class="n">q1</span><span class="p">)])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n\n</span><span class="s2">Forward kinematics, i.e. endpoint location as a function of joint angles:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">endpoint</span><span class="p">)</span>
+
+<span class="c1">##### inverse kinematics #############</span>
+
+<span class="c1"># the square of the target distance</span>
+<span class="n">R_squared</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># apply the law of cosines to calculate the elbow angle based on the target distance and the link lengths</span>
+<span class="n">elbowEqn</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">R_squared</span><span class="p">,</span> <span class="n">L1</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">L2</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">L1</span><span class="o">*</span><span class="n">L2</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="n">q1</span><span class="p">))</span>
+<span class="n">soln</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">elbowEqn</span><span class="p">,</span> <span class="p">[</span><span class="n">q1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n\n</span><span class="s2">Elbow solution:"</span><span class="p">,</span> <span class="n">soln</span><span class="p">)</span>
+
+<span class="c1"># the overall angle from the center to the endpoint</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># apply the law of sines</span>
+<span class="n">alphaEqn</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">L2</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="n">q1</span><span class="p">),</span> <span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">R_squared</span><span class="p">)</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span> <span class="o">-</span> <span class="n">q0</span><span class="p">))</span>
+
+<span class="n">soln</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">solve</span><span class="p">([</span><span class="n">elbowEqn</span><span class="p">,</span> <span class="n">alphaEqn</span><span class="p">],</span> <span class="p">[</span><span class="n">q0</span><span class="p">,</span> <span class="n">q1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n\n</span><span class="s2">Inverse kinematics, i.e. joint angles as a function of endpoint location:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">soln</span><span class="p">)</span>
+
+<span class="c1">##### demonstrate a solution ##############</span>
+
+<span class="n">values</span> <span class="o">=</span> <span class="p">{</span><span class="n">L1</span><span class="p">:</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">L2</span><span class="p">:</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="o">-</span><span class="mf">0.99</span><span class="p">}</span>
+<span class="n">angles</span> <span class="o">=</span> <span class="p">[[</span><span class="n">expr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="n">subs</span><span class="o">=</span><span class="n">values</span><span class="p">),</span> <span class="n">expr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="n">subs</span><span class="o">=</span><span class="n">values</span><span class="p">)]</span> <span class="k">for</span> <span class="n">expr</span> <span class="ow">in</span> <span class="n">soln</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n\n</span><span class="s2">angle solutions:"</span><span class="p">,</span> <span class="n">angles</span><span class="p">)</span>
+</pre></div>
+</td></tr></tbody></table></div>
+<div class="section" id="sample-output">
+<h2>Sample Output<a class="headerlink" href="#sample-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Forward kinematics, i.e. endpoint location as a function of joint angles:</span>
+<span class="go">Matrix([[L1*sin(q0) + L2*sin(q0 + q1)], [-L1*cos(q0) - L2*cos(q0 + q1)]])</span>
+
+
+<span class="go">Elbow solution: [-acos(-(L1**2 + L2**2 - x**2 - y**2)/(2*L1*L2)) + 2*pi, acos((-L1**2 - L2**2 + x**2 + y**2)/(2*L1*L2))]</span>
+
+
+<span class="go">Inverse kinematics, i.e. joint angles as a function of endpoint location:</span>
+<span class="go">[(-asin(L2*sqrt((2*L1**2*L2**2 + L1**2*(-L1**2 + 2*x**2 + 2*y**2) + L2**2*(-L2**2 + 2*x**2 + 2*y**2) - x**4 - 2*x**2*y**2 - y**4)/(L1**2*L2**2))/(2*sqrt(x**2 + y**2))) + atan2(x, -y), acos((-L1**2 - L2**2 + x**2 + y**2)/(2*L1*L2))), (asin(L2*sqrt((2*L1**2*L2**2 + L1**2*(-L1**2 + 2*x**2 + 2*y**2) + L2**2*(-L2**2 + 2*x**2 + 2*y**2) - x**4 - 2*x**2*y**2 - y**4)/(L1**2*L2**2))/(2*sqrt(x**2 + y**2))) + atan2(x, -y), -acos(-(L1**2 + L2**2 - x**2 - y**2)/(2*L1*L2)) + 2*pi), (-asin(L2*sqrt((2*L1**2*L2**2 + L1**2*(-L1**2 + 2*x**2 + 2*y**2) + L2**2*(-L2**2 + 2*x**2 + 2*y**2) - x**4 - 2*x**2*y**2 - y**4)/(L1**2*L2**2))/(2*sqrt(x**2 + y**2))) + atan2(x, -y) + pi, -acos(-(L1**2 + L2**2 - x**2 - y**2)/(2*L1*L2)) + 2*pi), (asin(L2*sqrt((2*L1**2*L2**2 + L1**2*(-L1**2 + 2*x**2 + 2*y**2) + L2**2*(-L2**2 + 2*x**2 + 2*y**2) - x**4 - 2*x**2*y**2 - y**4)/(L1**2*L2**2))/(2*sqrt(x**2 + y**2))) + atan2(x, -y) + pi, acos((-L1**2 - L2**2 + x**2 + y**2)/(2*L1*L2)))]</span>
+
+
+<span class="go">angle solutions: [[-0.131080344167084, 0.282362021504811], [0.151281677337727, 6.00082328567478], [3.01051230942271, 6.00082328567478], [3.29287433092752, 0.282362021504811]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&nbsp;&nbsp;<a href="https://courses.ideate.cmu.edu/16-375/f2020/text/code/lecture-samples/two-link-ik.html">two-link-ik.py</a>
+        &nbsp;&nbsp;::&nbsp;&nbsp;
+        <a class="uplink" href="https://courses.ideate.cmu.edu/16-375/f2020/text/index.html">Contents</a>
+        &nbsp;&nbsp;::&nbsp;&nbsp;
+        <a href="https://courses.ideate.cmu.edu/16-375/f2020/text/code/MQTT-Monitor.html">MQTT Monitor (PyQt5)</a>&nbsp;&nbsp;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        © Copyright 2020, Garth Zeglin. Licensed under <a class="reference external" href="http://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>.
+      Last updated on 2021-01-26.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.4.
+    <a class="reference external" href="https://www.cmu.edu/legal/">University legal notice</a>.
+    </div>
+  
+</body></html>

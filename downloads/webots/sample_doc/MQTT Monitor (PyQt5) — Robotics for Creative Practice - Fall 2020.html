@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>MQTT Monitor (PyQt5) — Robotics for Creative Practice - Fall 2020</title>
+    <link rel="stylesheet" href="MQTT%20Monitor%20(PyQt5)%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/haiku.css" type="text/css">
+    <link rel="stylesheet" href="MQTT%20Monitor%20(PyQt5)%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/pygments.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="MQTT%20Monitor%20(PyQt5)%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/graphviz.css">
+    <link rel="stylesheet" href="MQTT%20Monitor%20(PyQt5)%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/guide.css" type="text/css">
+    <script id="documentation_options" data-url_root="../" src="MQTT%20Monitor%20(PyQt5)%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/documentation_options.js"></script>
+    <script src="MQTT%20Monitor%20(PyQt5)%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/jquery.js"></script>
+    <script src="MQTT%20Monitor%20(PyQt5)%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/underscore.js"></script>
+    <script src="MQTT%20Monitor%20(PyQt5)%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/doctools.js"></script>
+    <script src="MQTT%20Monitor%20(PyQt5)%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/language_data.js"></script>
+    <link rel="index" title="Index" href="https://courses.ideate.cmu.edu/16-375/f2020/text/genindex.html">
+    <link rel="search" title="Search" href="https://courses.ideate.cmu.edu/16-375/f2020/text/search.html">
+    <link rel="next" title="Double Pendulum Simulator" href="https://courses.ideate.cmu.edu/16-375/f2020/text/code/dblpend-simulator.html">
+    <link rel="prev" title="two-link-kinematics.py" href="https://courses.ideate.cmu.edu/16-375/f2020/text/code/lecture-samples/two-link-kinematics.html"> 
+  </head><body>
+      <div class="header" role="banner"><h1 class="heading"><a href="https://courses.ideate.cmu.edu/16-375/f2020/text/index.html">
+          <span>Robotics for Creative Practice - Fall 2020</span></a></h1>
+        <h2 class="heading"><span>MQTT Monitor (PyQt5)</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&nbsp;&nbsp;<a href="https://courses.ideate.cmu.edu/16-375/f2020/text/code/lecture-samples/two-link-kinematics.html">two-link-kinematics.py</a>
+        &nbsp;&nbsp;::&nbsp;&nbsp;
+        <a class="uplink" href="https://courses.ideate.cmu.edu/16-375/f2020/text/index.html">Contents</a>
+        &nbsp;&nbsp;::&nbsp;&nbsp;
+        <a href="https://courses.ideate.cmu.edu/16-375/f2020/text/code/dblpend-simulator.html">Double Pendulum Simulator</a>&nbsp;&nbsp;»
+        </p>
+
+      </div>
+      <div class="content" role="main">
+        
+        
+  <div class="section" id="mqtt-monitor-pyqt5">
+<span id="mqtt-monitor"></span><h1>MQTT Monitor (PyQt5)<a class="headerlink" href="#mqtt-monitor-pyqt5" title="Permalink to this headline">¶</a></h1>
+<p>This utility GUI application is a tool for debugging programs using a remote
+MQTT server.  It can show messages on multiple topics and publish text-based
+messages on a single topic.</p>
+<div class="figure align-center" id="id2" style="width: 75%">
+<a class="reference internal image-reference" href="https://courses.ideate.cmu.edu/16-375/f2020/text/_images/qt_mqtt_monitor.png"><img alt="../_images/qt_mqtt_monitor.png" src="MQTT%20Monitor%20(PyQt5)%20%E2%80%94%20Robotics%20for%20Creative%20Practice%20-%20Fall%202020_files/qt_mqtt_monitor.png" style="width: 75%;"></a>
+<p class="caption"><span class="caption-text">The MQTT monitor application in operation.  The large button at the top
+brings up detailed help.  This utility may be helpful for debugging other
+MQTT applications.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>The application is provided all in one file and can be be directly downloaded
+from <a class="reference external" href="https://courses.ideate.cmu.edu/16-375/f2020/Python/mqtt/qt_mqtt_monitor.py">qt_mqtt_monitor.py</a>.
+The following sections have both documentation and the full code.</p>
+<div class="section" id="installation-requirements">
+<h2>Installation Requirements<a class="headerlink" href="#installation-requirements" title="Permalink to this headline">¶</a></h2>
+<p>The code requires a working installation of Python 3 with <a class="reference external" href="https://www.riverbankcomputing.com/static/Docs/PyQt5/index.html">PyQt5</a> and <a class="reference external" href="https://www.eclipse.org/paho/clients/python/docs/">paho-mqtt</a>.
+For suggestions on setting up your system please see <a class="reference internal" href="https://courses.ideate.cmu.edu/16-375/f2020/text/resources/Python.html#python-guide"><span class="std std-ref">Python 3 Installation</span></a>.</p>
+</div>
+<div class="section" id="user-guide">
+<h2>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h2>
+<p>The procedure for use generally follows this sequence:</p>
+<ol class="arabic simple">
+<li><p>Launch the <code class="docutils literal notranslate"><span class="pre">qt_mqtt_monitor.py</span></code> program using Python 3.</p></li>
+<li><p>Select the port corresponding to your course number.</p></li>
+<li><p>Enter the username and password provided by your instructor.</p></li>
+<li><p>Verify that the server address is <code class="docutils literal notranslate"><span class="pre">mqtt.ideate.cmu.edu</span></code>,  then click Connect.</p></li>
+<li><p>Enter a subscription pattern according to your needs.  The default <code class="docutils literal notranslate"><span class="pre">#</span></code> will
+show all traffic.  A pattern such as <code class="docutils literal notranslate"><span class="pre">username/#</span></code> will limit displayed
+traffic to a particular sender.</p></li>
+<li><p>Enter a transmission topic according to your needs.  By convention we are
+using Andrew IDs to identify our own transmitted messages.</p></li>
+<li><p>Enter text to transmit in the data field. Pressing enter will send the
+current message; pressing enter multiple times will retransmit the same
+message.</p></li>
+</ol>
+</div>
+<div class="section" id="source-code-documentation">
+<h2>Source Code Documentation<a class="headerlink" href="#source-code-documentation" title="Permalink to this headline">¶</a></h2>
+<p>If you’re curious about the inner workings of the app, the rest of this page
+provides detailed documentation.  This section is not necessary for using the
+system.</p>
+<div class="section" id="mainapp">
+<h3>MainApp<a class="headerlink" href="#mainapp" title="Permalink to this headline">¶</a></h3>
+<dl class="py class">
+<dt id="mqtt.qt_mqtt_monitor.MainApp">
+<em class="property">class </em><code class="sig-prename descclassname">mqtt.qt_mqtt_monitor.</code><code class="sig-name descname">MainApp</code><a class="reference internal" href="https://courses.ideate.cmu.edu/16-375/f2020/text/_modules/mqtt/qt_mqtt_monitor.html#MainApp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mqtt.qt_mqtt_monitor.MainApp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main application object holding any non-GUI related state.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="maingui">
+<h3>MainGUI<a class="headerlink" href="#maingui" title="Permalink to this headline">¶</a></h3>
+<dl class="py class">
+<dt id="mqtt.qt_mqtt_monitor.MainGUI">
+<em class="property">class </em><code class="sig-prename descclassname">mqtt.qt_mqtt_monitor.</code><code class="sig-name descname">MainGUI</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">main</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="https://courses.ideate.cmu.edu/16-375/f2020/text/_modules/mqtt/qt_mqtt_monitor.html#MainGUI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mqtt.qt_mqtt_monitor.MainGUI" title="Permalink to this definition">¶</a></dt>
+<dd><p>A custom main window which provides all GUI controls.  Requires a delegate main application object to handle user requests.</p>
+<dl class="py method">
+<dt id="mqtt.qt_mqtt_monitor.MainGUI.closeEvent">
+<code class="sig-name descname">closeEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">QCloseEvent</span></em><span class="sig-paren">)</span><a class="reference internal" href="https://courses.ideate.cmu.edu/16-375/f2020/text/_modules/mqtt/qt_mqtt_monitor.html#MainGUI.closeEvent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mqtt.qt_mqtt_monitor.MainGUI.closeEvent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mqtt.qt_mqtt_monitor.MainGUI.write">
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="reference internal" href="https://courses.ideate.cmu.edu/16-375/f2020/text/_modules/mqtt/qt_mqtt_monitor.html#MainGUI.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mqtt.qt_mqtt_monitor.MainGUI.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write output to the console text area in a thread-safe way.  Qt only allows
+calls from the main thread, but the service routines run on separate threads.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="full-code">
+<h2>Full Code<a class="headerlink" href="#full-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="sd">"""A PyQt5 GUI utility to monitor and send MQTT server messages."""</span>
+
+<span class="c1">################################################################</span>
+<span class="c1"># Written in 2018-2020 by Garth Zeglin &lt;garthz@cmu.edu&gt;</span>
+
+<span class="c1"># To the extent possible under law, the author has dedicated all copyright</span>
+<span class="c1"># and related and neighboring rights to this software to the public domain</span>
+<span class="c1"># worldwide. This software is distributed without any warranty.</span>
+
+<span class="c1"># You should have received a copy of the CC0 Public Domain Dedication along with this software.</span>
+<span class="c1"># If not, see &lt;http://creativecommons.org/publicdomain/zero/1.0/&gt;.</span>
+
+<span class="c1">################################################################</span>
+<span class="c1"># standard Python libraries</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">struct</span><span class="o">,</span> <span class="nn">time</span><span class="o">,</span> <span class="nn">logging</span><span class="o">,</span> <span class="nn">functools</span><span class="o">,</span> <span class="nn">queue</span><span class="o">,</span> <span class="nn">signal</span><span class="o">,</span> <span class="nn">getpass</span>
+
+<span class="c1"># documentation: https://doc.qt.io/qt-5/index.html</span>
+<span class="c1"># documentation: https://www.riverbankcomputing.com/static/Docs/PyQt5/index.html</span>
+<span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtCore</span><span class="p">,</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="p">,</span> <span class="n">QtNetwork</span>
+
+<span class="c1"># documentation: https://www.eclipse.org/paho/clients/python/docs/</span>
+<span class="kn">import</span> <span class="nn">paho.mqtt.client</span> <span class="k">as</span> <span class="nn">mqtt</span>
+
+<span class="c1"># default logging output</span>
+<span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">'main'</span><span class="p">)</span>
+
+<span class="c1"># logger to pass to the MQTT library</span>
+<span class="n">mqtt_log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">'mqtt'</span><span class="p">)</span>
+<span class="n">mqtt_log</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+
+<span class="c1"># IDeATE server instances, as per https://mqtt.ideate.cmu.edu/#ports</span>
+
+<span class="n">ideate_ports</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">8884</span> <span class="p">:</span> <span class="s1">'16-223'</span><span class="p">,</span>
+                 <span class="mi">8885</span> <span class="p">:</span> <span class="s1">'16-375'</span><span class="p">,</span>
+                 <span class="mi">8886</span> <span class="p">:</span> <span class="s1">'60-223'</span><span class="p">,</span>
+                 <span class="mi">8887</span> <span class="p">:</span> <span class="s1">'62-362'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">mqtt_rc_codes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Success'</span><span class="p">,</span> <span class="s1">'Incorrect protocol version'</span><span class="p">,</span> <span class="s1">'Invalid client identifier'</span><span class="p">,</span> <span class="s1">'Server unavailable'</span><span class="p">,</span> <span class="s1">'Bad username or password'</span><span class="p">,</span> <span class="s1">'Not authorized'</span><span class="p">]</span>
+
+<span class="c1">################################################################</span>
+<span class="k">class</span> <span class="nc">MainGUI</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
+    <span class="sd">"""A custom main window which provides all GUI controls.  Requires a delegate main application object to handle user requests."""</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">main</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MainGUI</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="c1"># save the main object for delegating GUI events</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span> <span class="o">=</span> <span class="n">main</span>
+
+        <span class="c1"># create the GUI elements</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console_queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setupUi</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_handler</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">enable_console_logging</span><span class="p">()</span>
+
+        <span class="c1"># finish initialization</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+        <span class="c1"># manage the console output across threads</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console_timer</span> <span class="o">=</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">QTimer</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console_timer</span><span class="o">.</span><span class="n">timeout</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_poll_console_queue</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console_timer</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># units are milliseconds</span>
+
+        <span class="k">return</span>
+
+    <span class="c1"># ------------------------------------------------------------------------------------------------</span>
+    <span class="k">def</span> <span class="nf">setupUi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">"IDeATe MQTT Monitor"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QWidget</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QVBoxLayout</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout</span><span class="o">.</span><span class="n">setContentsMargins</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="c1"># left, top, right, bottom</span>
+
+        <span class="c1"># help panel button</span>
+        <span class="n">help</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QPushButton</span><span class="p">(</span><span class="s1">'Open the Help Panel'</span><span class="p">)</span>
+        <span class="n">help</span><span class="o">.</span><span class="n">pressed</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">help_requested</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">help</span><span class="p">)</span>
+
+        <span class="c1"># generate GUI for configuring the MQTT connection</span>
+
+        <span class="c1"># server name entry and port selection</span>
+        <span class="n">hbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHBoxLayout</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">hbox</span><span class="p">)</span>
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"MQTT server address:"</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_server_name</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLineEdit</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_server_name</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">hostname</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_server_name</span><span class="o">.</span><span class="n">editingFinished</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_server_name_entered</span><span class="p">)</span>
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_server_name</span><span class="p">)</span>
+
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"port:"</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">port_selector</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QComboBox</span><span class="p">()</span>
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">port_selector</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">port_selector</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">pairs</span> <span class="ow">in</span> <span class="n">ideate_ports</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">port_selector</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)"</span> <span class="o">%</span> <span class="n">pairs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">port_selector</span><span class="o">.</span><span class="n">activated</span><span class="p">[</span><span class="s1">'QString'</span><span class="p">]</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_port_selected</span><span class="p">)</span>
+
+        <span class="c1"># attempt to pre-select the stored port number</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ideate_ports</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">portnum</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">port_selector</span><span class="o">.</span><span class="n">setCurrentIndex</span><span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="c1"># instructions</span>
+        <span class="n">explanation</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"""Username and password provided by instructor.  Please see help panel for details."""</span><span class="p">)</span>
+        <span class="n">explanation</span><span class="o">.</span><span class="n">setWordWrap</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">explanation</span><span class="p">)</span>
+
+        <span class="c1"># user and password entry</span>
+        <span class="n">hbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHBoxLayout</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">hbox</span><span class="p">)</span>
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"MQTT username:"</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_username</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLineEdit</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_username</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">username</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_username</span><span class="o">.</span><span class="n">editingFinished</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_username_entered</span><span class="p">)</span>
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_username</span><span class="p">)</span>
+
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"password:"</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_password</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLineEdit</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_password</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">password</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_password</span><span class="o">.</span><span class="n">editingFinished</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_password_entered</span><span class="p">)</span>
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_password</span><span class="p">)</span>
+
+        <span class="c1"># instructions</span>
+        <span class="n">explanation</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"""A subscription specifies topics to receive.  Please see help panel for details."""</span><span class="p">)</span>
+        <span class="n">explanation</span><span class="o">.</span><span class="n">setWordWrap</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">explanation</span><span class="p">)</span>
+
+        <span class="c1"># subscription topic entry</span>
+        <span class="n">hbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHBoxLayout</span><span class="p">()</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"MQTT message subscription:"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_sub</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLineEdit</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_sub</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">subscription</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_sub</span><span class="o">.</span><span class="n">editingFinished</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_sub_entered</span><span class="p">)</span>
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_sub</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">hbox</span><span class="p">)</span>
+
+        <span class="c1"># connection indicator</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connected</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLabel</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connected</span><span class="o">.</span><span class="n">setLineWidth</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connected</span><span class="o">.</span><span class="n">setFrameStyle</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QFrame</span><span class="o">.</span><span class="n">Box</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connected</span><span class="o">.</span><span class="n">setAlignment</span><span class="p">(</span><span class="n">QtCore</span><span class="o">.</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignCenter</span><span class="p">)</span>
+        <span class="n">sizePolicy</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QSizePolicy</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QSizePolicy</span><span class="o">.</span><span class="n">Fixed</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QSizePolicy</span><span class="o">.</span><span class="n">Fixed</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connected</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_connected_state</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1"># connection control buttons</span>
+        <span class="n">connect</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QPushButton</span><span class="p">(</span><span class="s1">'Connect'</span><span class="p">)</span>
+        <span class="n">connect</span><span class="o">.</span><span class="n">pressed</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection_requested</span><span class="p">)</span>
+        <span class="n">disconnect</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QPushButton</span><span class="p">(</span><span class="s1">'Disconnect'</span><span class="p">)</span>
+        <span class="n">disconnect</span><span class="o">.</span><span class="n">pressed</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">disconnect_from_mqtt_server</span><span class="p">)</span>
+        <span class="n">hbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHBoxLayout</span><span class="p">()</span>
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connected</span><span class="p">)</span>
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">connect</span><span class="p">)</span>
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">disconnect</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">hbox</span><span class="p">)</span>
+
+        <span class="c1"># text area for displaying both internal and received messages</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">consoleOutput</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QPlainTextEdit</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">consoleOutput</span><span class="o">.</span><span class="n">setHorizontalScrollBarPolicy</span><span class="p">(</span><span class="n">QtCore</span><span class="o">.</span><span class="n">Qt</span><span class="o">.</span><span class="n">ScrollBarAsNeeded</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">consoleOutput</span><span class="p">)</span>
+
+        <span class="c1"># instructions</span>
+        <span class="n">explanation</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"""Pressing enter in the data field will broadcast the string on the given topic."""</span><span class="p">)</span>
+        <span class="n">explanation</span><span class="o">.</span><span class="n">setWordWrap</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">explanation</span><span class="p">)</span>
+
+        <span class="c1"># message topic entry</span>
+        <span class="n">hbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHBoxLayout</span><span class="p">()</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"MQTT message topic:"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_topic</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLineEdit</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_topic</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">topic</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_topic</span><span class="o">.</span><span class="n">editingFinished</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_topic_entered</span><span class="p">)</span>
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_topic</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">hbox</span><span class="p">)</span>
+
+        <span class="c1"># message payload entry</span>
+        <span class="n">hbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHBoxLayout</span><span class="p">()</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"MQTT message data:"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_payload</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLineEdit</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_payload</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">payload</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_payload</span><span class="o">.</span><span class="n">returnPressed</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_payload_entered</span><span class="p">)</span>
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_payload</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">hbox</span><span class="p">)</span>
+
+        <span class="c1"># set up the status bar which appears at the bottom of the window</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">statusbar</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QStatusBar</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setStatusBar</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">statusbar</span><span class="p">)</span>
+
+        <span class="c1"># set up the main menu</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menubar</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMenuBar</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menubar</span><span class="o">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="n">QtCore</span><span class="o">.</span><span class="n">QRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">22</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menubar</span><span class="o">.</span><span class="n">setNativeMenuBar</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menubar</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="s2">"menubar"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menuTitle</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMenu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">menubar</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setMenuBar</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">menubar</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">actionQuit</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QAction</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menuTitle</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">actionQuit</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menubar</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">menuTitle</span><span class="o">.</span><span class="n">menuAction</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menuTitle</span><span class="o">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s2">"File"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">actionQuit</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">"Quit"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">actionQuit</span><span class="o">.</span><span class="n">setShortcut</span><span class="p">(</span><span class="s2">"Ctrl+Q"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">actionQuit</span><span class="o">.</span><span class="n">triggered</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">quitSelected</span><span class="p">)</span>
+
+        <span class="k">return</span>
+
+    <span class="c1"># --- logging to screen -------------------------------------------------------------</span>
+    <span class="k">def</span> <span class="nf">enable_console_logging</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># get the root logger to receive all logging traffic</span>
+        <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+        <span class="c1"># create a logging handler which writes to the console window via self.write</span>
+        <span class="n">handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">'</span><span class="si">%(levelname)s</span><span class="s1">:</span><span class="si">%(name)s</span><span class="s1">: </span><span class="si">%(message)s</span><span class="s1">'</span><span class="p">))</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+        <span class="c1"># logger.setLevel(logging.NOTSET)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+        <span class="n">handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">NOTSET</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_handler</span> <span class="o">=</span> <span class="n">handler</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Enabled logging in console window."</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">disable_console_logging</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">removeHandler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_handler</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_handler</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># --- window and qt event processing -------------------------------------------------------------</span>
+    <span class="k">def</span> <span class="nf">show_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">statusbar</span><span class="o">.</span><span class="n">showMessage</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_poll_console_queue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">"""Write any queued console text to the console text area from the main thread."""</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">console_queue</span><span class="o">.</span><span class="n">empty</span><span class="p">():</span>
+            <span class="n">string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">console_queue</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+            <span class="n">stripped</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">stripped</span> <span class="o">!=</span> <span class="s2">""</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">consoleOutput</span><span class="o">.</span><span class="n">appendPlainText</span><span class="p">(</span><span class="n">stripped</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+        <span class="sd">"""Write output to the console text area in a thread-safe way.  Qt only allows</span>
+<span class="sd">        calls from the main thread, but the service routines run on separate threads."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console_queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">quitSelected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"User selected quit."</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">closeEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Received window close event."</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">app_is_exiting</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">disable_console_logging</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MainGUI</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">closeEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">set_connected_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">flag</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">connected</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">"  Connected   "</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">connected</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s2">"color: white; background-color: green;"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">connected</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">" Not Connected "</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">connected</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s2">"color: white; background-color: blue;"</span><span class="p">)</span>
+
+
+    <span class="c1"># --- GUI widget event processing ----------------------------------------------------------------------</span>
+
+    <span class="k">def</span> <span class="nf">help_requested</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">panel</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QDialog</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">panel</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span>
+        <span class="n">panel</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">"IDeATe MQTT Monitor: Help Info"</span><span class="p">)</span>
+        <span class="n">vbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QVBoxLayout</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+        <span class="n">hbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHBoxLayout</span><span class="p">()</span>
+        <span class="n">vbox</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">hbox</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QTextEdit</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+        <span class="n">hbox</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">insertHtml</span><span class="p">(</span><span class="s2">"""</span>
+<span class="s2">&lt;style type="text/css"&gt;</span>
+<span class="s2">table { margin-left: 20px; }</span>
+<span class="s2">td { padding-left: 20px; }</span>
+<span class="s2">&lt;/style&gt;</span>
+<span class="s2">&lt;a href="#top"&gt;&lt;/a&gt;</span>
+<span class="s2">&lt;h1&gt;IDeATe MQTT Monitor&lt;/h1&gt;</span>
+<span class="s2">&lt;p&gt;This Python application is a tool intended for debugging programs which pass short data messages back and forth across the network via a MQTT server.  It supports opening an authenticated connection to the server, subscribing to a class of messages in order to receive them, viewing message traffic, and publishing new messages on a specified message topic.&lt;/p&gt;</span>
+<span class="s2">&lt;h2&gt;Connecting&lt;/h2&gt;</span>
+<span class="s2">&lt;p&gt;The first set of controls configures server parameters before attempting a connection.  Changes will not take effect until the next connection attempt.&lt;/p</span>
+
+<span class="s2">&lt;dl&gt;</span>
+<span class="s2">  &lt;dt&gt;server address&lt;/dt&gt;&lt;dd&gt;The network name of the MQTT server. (Defaults to mqtt.ideate.cmu.edu.)&lt;/dd&gt;</span>
+<span class="s2">  &lt;dt&gt;server port&lt;/dt&gt;&lt;dd&gt;The numeric port number for the MQTT server.  IDeATe is using a separate server for each course, so the drop-down menu also identifies the associated course number.&lt;/dd&gt;</span>
+<span class="s2">  &lt;dt&gt;username&lt;/dt&gt;&lt;dd&gt;Server-specific identity, chosen by your instructor.&lt;/dd&gt;</span>
+<span class="s2">  &lt;dt&gt;password&lt;/dt&gt;&lt;dd&gt;Server-specific password, chosen by your instructor.&lt;/dd&gt;</span>
+<span class="s2">&lt;/dl&gt;</span>
+
+<span class="s2">&lt;p&gt;Your username and password is specific to the MQTT server and will be provided by your instructor.  This may be individual or may be a shared login for all students in the course.  Please note, the password will not be your Andrew password.&lt;/p&gt;</span>
+
+<span class="s2">&lt;h2&gt;Listening&lt;/h2&gt;</span>
+
+<span class="s2">&lt;p&gt;MQTT works on a publish/subscribe model in which messages are published on &lt;i&gt;topics&lt;/i&gt; identified by a topic name.  The name is structured like a path string separated by &lt;tt&gt;/&lt;/tt&gt; characters to organize messages into a hierarchy of topics and subtopics.</span>
+<span class="s2">Our course policy will be to prefix all topics with a student andrew ID, e.g. if your user name is xyzzy, we ask that you publish on the 'xyzzy' topic and sub-topics, as per the following examples.&lt;/p&gt;</span>
+
+
+<span class="s2">&lt;p&gt;</span>
+<span class="s2">&lt;table&gt;</span>
+<span class="s2">&lt;tr&gt;&lt;td&gt;&lt;b&gt;xyzzy&lt;/b&gt;&lt;/td&gt;&lt;td&gt;top-level topic on which user 'xyzzy' should publish&lt;/td&gt;&lt;/tr&gt;</span>
+<span class="s2">&lt;tr&gt;&lt;td&gt;&lt;b&gt;xyzzy/status&lt;/b&gt;&lt;/td&gt;&lt;td&gt;a sub-topic on which user 'xyzzy' could publish&lt;/td&gt;&lt;/tr&gt;</span>
+<span class="s2">&lt;tr&gt;&lt;td&gt;&lt;b&gt;xyzzy/sensor&lt;/b&gt;&lt;/td&gt;&lt;td&gt;another sub-topic on which user 'xyzzy' could publish&lt;/td&gt;&lt;/tr&gt;</span>
+<span class="s2">&lt;tr&gt;&lt;td&gt;&lt;b&gt;xyzzy/sensor/1&lt;/b&gt;&lt;/td&gt;&lt;td&gt;a possible sub-sub-topic&lt;/td&gt;&lt;/tr&gt;</span>
+<span class="s2">&lt;/table&gt;</span>
+<span class="s2">&lt;/p&gt;</span>
+
+<span class="s2">&lt;p&gt;The message subscription field specifies topics to receive.  The subscription may include a # character as a wildcard, as per the following examples.&lt;/p&gt;</span>
+<span class="s2">&lt;p&gt;&lt;table&gt;</span>
+<span class="s2">&lt;tr&gt;&lt;td&gt;&lt;b&gt;#&lt;/b&gt;&lt;/td&gt;&lt;td&gt;subscribe to all messages&lt;/td&gt;&lt;/tr&gt;</span>
+<span class="s2">&lt;tr&gt;&lt;td&gt;&lt;b&gt;xyzzy&lt;/b&gt;&lt;/td&gt;&lt;td&gt;subscribe to the top-level published messages for user xyzzy&lt;/td&gt;&lt;/tr&gt;</span>
+<span class="s2">&lt;tr&gt;&lt;td&gt;&lt;b&gt;xyzzy/#&lt;/b&gt;&lt;/td&gt;&lt;td&gt;subscribe to all published messages for user xyzzy, including subtopics&lt;/td&gt;&lt;/tr&gt;</span>
+<span class="s2">&lt;/table&gt;</span>
+<span class="s2">&lt;/p&gt;</span>
+<span class="s2">&lt;p&gt;Changing the subscription field immediately changes what is received; the monitor unsubscribes from the previous pattern and subscribes to the new one.  Entering an empty field defaults to the global pattern '#'.&lt;/p&gt;</span>
+
+<span class="s2">&lt;p&gt;The large text field is the console area which shows both debugging and status log messages as well as received messages.&lt;/p&gt;</span>
+
+<span class="s2">&lt;h2&gt;Sending&lt;/h2&gt;</span>
+
+<span class="s2">&lt;p&gt;At the bottom are a topic field and data field for publishing plain text messages.  Pressing enter in the data field will</span>
+<span class="s2">transmit the data string on the specified topic.  The text is not cleared after entry, so pressing enter multiple times will send the same text multiple times.&lt;/p&gt;</span>
+<span class="s2">&lt;p&gt;The MQTT protocol supports binary messages (i.e. any sequence of bytes), but this tool currently only supports sending messages with plain text.&lt;/p&gt;</span>
+
+
+<span class="s2">&lt;h2&gt;More Information&lt;/h2&gt;</span>
+
+<span class="s2">&lt;p&gt;The IDeATE server has more detailed information on the server help page at &lt;b&gt;https://mqtt.ideate.cmu.edu&lt;/b&gt;&lt;/p&gt;</span>
+
+<span class="s2">"""</span><span class="p">)</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">scrollToAnchor</span><span class="p">(</span><span class="s2">"top"</span><span class="p">)</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">setReadOnly</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">panel</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">mqtt_server_name_entered</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_server_name</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Server name changed: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">set_server_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">decode_port_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">port_selector</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">title</span> <span class="o">==</span> <span class="s2">""</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">title</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># convert the first token to a number</span>
+
+    <span class="k">def</span> <span class="nf">mqtt_port_selected</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+        <span class="n">portnum</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decode_port_selection</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Port selection changed: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">title</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">set_server_port</span><span class="p">(</span><span class="n">portnum</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">mqtt_username_entered</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_username</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"User name changed: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">set_username</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">mqtt_password_entered</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_password</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Password changed: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">connection_requested</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># When the connect button is pressed, make sure all fields are up to</span>
+        <span class="c1"># date.  It is otherwise possible to leave a text field selected with</span>
+        <span class="c1"># unreceived changes while pressing Connect.</span>
+        <span class="n">hostname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_server_name</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+        <span class="n">portnum</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decode_port_selection</span><span class="p">()</span>
+        <span class="n">username</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_username</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+        <span class="n">password</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_password</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">set_server_name</span><span class="p">(</span><span class="n">hostname</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">set_server_port</span><span class="p">(</span><span class="n">portnum</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">set_username</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">connect_to_mqtt_server</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">mqtt_sub_entered</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_sub</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">sub</span> <span class="o">==</span> <span class="s1">''</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_sub</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">"#"</span><span class="p">)</span>
+            <span class="n">sub</span> <span class="o">=</span> <span class="s2">"#"</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Subscription changed to: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">sub</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">set_subscription</span><span class="p">(</span><span class="n">sub</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">mqtt_topic_entered</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">topic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_topic</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Topic changed to: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">topic</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">set_topic</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">mqtt_payload_entered</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">topic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_topic</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_payload</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+
+<span class="c1">################################################################</span>
+<span class="k">class</span> <span class="nc">MainApp</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">"""Main application object holding any non-GUI related state."""</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="c1"># Attach a handler to the keyboard interrupt (control-C).</span>
+        <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sigint_handler</span><span class="p">)</span>
+
+        <span class="c1"># load any available persistent application settings</span>
+        <span class="n">QtCore</span><span class="o">.</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">setOrganizationName</span><span class="p">(</span><span class="s2">"IDeATe"</span><span class="p">)</span>
+        <span class="n">QtCore</span><span class="o">.</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">setOrganizationDomain</span><span class="p">(</span><span class="s2">"ideate.cmu.edu"</span><span class="p">)</span>
+        <span class="n">QtCore</span><span class="o">.</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">setApplicationName</span><span class="p">(</span><span class="s1">'mqtt_monitor'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">settings</span> <span class="o">=</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">QSettings</span><span class="p">()</span>
+
+        <span class="c1"># uncomment to restore 'factory defaults'</span>
+        <span class="c1"># self.settings.clear()</span>
+
+        <span class="c1"># MQTT server settings</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hostname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">'mqtt_host'</span><span class="p">,</span> <span class="s1">'mqtt.ideate.cmu.edu'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">portnum</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">'mqtt_port'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">'mqtt_user'</span><span class="p">,</span> <span class="s1">'students'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">'mqtt_password'</span><span class="p">,</span> <span class="s1">'(not yet entered)'</span><span class="p">)</span>
+
+        <span class="c1"># Create a default subscription based on the username.  The hash mark is a wildcard.</span>
+        <span class="n">username</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getuser</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subscription</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">'mqtt_subscription'</span><span class="p">,</span> <span class="n">username</span> <span class="o">+</span> <span class="s1">'/#'</span><span class="p">)</span>
+
+        <span class="c1"># default message to send</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">topic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">'mqtt_topic'</span><span class="p">,</span> <span class="n">username</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">'mqtt_payload'</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">)</span>
+
+        <span class="c1"># create the interface window</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">MainGUI</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="c1"># Initialize the MQTT client system</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">mqtt</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">enable_logger</span><span class="p">(</span><span class="n">mqtt_log</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">on_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_log</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">on_connect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_connect</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">on_disconnect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_disconnect</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">on_message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_message</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">tls_set</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">show_status</span><span class="p">(</span><span class="s2">"Please set the MQTT server address and select Connect."</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="c1">################################################################</span>
+    <span class="k">def</span> <span class="nf">app_is_exiting</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">is_connected</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">loop_stop</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_sigint_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Keyboard interrupt caught, running close handlers..."</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">app_is_exiting</span><span class="p">()</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1">################################################################</span>
+    <span class="k">def</span> <span class="nf">set_server_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hostname</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="s1">'mqtt_host'</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">set_server_port</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">portnum</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="s1">'mqtt_port'</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">portnum</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">set_username</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="s1">'mqtt_user'</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">set_password</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="s1">'mqtt_password'</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">connect_to_mqtt_server</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">is_connected</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Already connected."</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">portnum</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">"Please specify the server port before attempting connection."</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">"Initiating MQTT connection to </span><span class="si">%s</span><span class="s2">:</span><span class="si">%d</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hostname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">portnum</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Attempting connection."</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">username_pw_set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">connect_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hostname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">portnum</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">loop_start</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">disconnect_from_mqtt_server</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">is_connected</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Not connected."</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">loop_stop</span><span class="p">()</span>
+
+    <span class="c1">################################################################</span>
+    <span class="c1"># The callback for when the broker responds to our connection request.</span>
+    <span class="k">def</span> <span class="nf">on_connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">userdata</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">rc</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Connected to server with with flags: </span><span class="si">%s</span><span class="s2">, result code: </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">flags</span><span class="p">,</span> <span class="n">rc</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">rc</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Connection succeeded."</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">rc</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">rc</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">mqtt_rc_codes</span><span class="p">):</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">"Connection failed with error: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">mqtt_rc_codes</span><span class="p">[</span><span class="n">rc</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">"Connection failed with unknown error </span><span class="si">%d</span><span class="s2">"</span><span class="p">,</span> <span class="n">rc</span><span class="p">)</span>
+
+        <span class="c1"># Subscribing in on_connect() means that if we lose the connection and reconnect then subscriptions will be renewed.</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">subscription</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">show_status</span><span class="p">(</span><span class="s2">"Connected."</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">set_connected_state</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="c1"># The callback for when the broker responds with error messages.</span>
+    <span class="k">def</span> <span class="nf">on_log</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">userdata</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">buf</span><span class="p">):</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">"on_log level </span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">userdata</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">on_disconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">userdata</span><span class="p">,</span> <span class="n">rc</span><span class="p">):</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">"disconnected"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Disconnected from server."</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">show_status</span><span class="p">(</span><span class="s2">"Disconnected."</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">set_connected_state</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># The callback for when a message has been received on a topic to which this</span>
+    <span class="c1"># client is subscribed.  The message variable is a MQTTMessage that describes</span>
+    <span class="c1"># all of the message parameters.</span>
+
+    <span class="c1"># Some useful MQTTMessage fields: topic, payload, qos, retain, mid, properties.</span>
+    <span class="c1">#   The payload is a binary string (bytes).</span>
+    <span class="c1">#   qos is an integer quality of service indicator (0,1, or 2)</span>
+    <span class="c1">#   mid is an integer message ID.</span>
+
+    <span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">userdata</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"{</span><span class="si">%s</span><span class="s2">} </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">topic</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">payload</span><span class="p">))</span>
+        <span class="k">return</span>
+
+    <span class="c1">################################################################</span>
+    <span class="k">def</span> <span class="nf">set_subscription</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sub</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">is_connected</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">unsubscribe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">subscription</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">sub</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">subscription</span> <span class="o">=</span> <span class="n">sub</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="s1">'mqtt_subscription'</span><span class="p">,</span> <span class="n">sub</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Invalid subscription string, not changed."</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">subscription</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">subscription</span> <span class="o">=</span> <span class="n">sub</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="s1">'mqtt_subscription'</span><span class="p">,</span> <span class="n">sub</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">set_topic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sub</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">topic</span> <span class="o">=</span> <span class="n">sub</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="s1">'mqtt_topic'</span><span class="p">,</span> <span class="n">sub</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">topic</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">is_connected</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"Not connected."</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="n">payload</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="s1">'mqtt_payload'</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+
+    <span class="c1">################################################################</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Optionally add an additional root log handler to stream messages to the terminal console.</span>
+    <span class="k">if</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">console_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+        <span class="n">console_handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+        <span class="n">console_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">'</span><span class="si">%(levelname)s</span><span class="s1">:</span><span class="si">%(name)s</span><span class="s1">: </span><span class="si">%(message)s</span><span class="s1">'</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">console_handler</span><span class="p">)</span>
+
+    <span class="c1"># initialize the Qt system itself</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+
+    <span class="c1"># create the main application controller</span>
+    <span class="n">main</span> <span class="o">=</span> <span class="n">MainApp</span><span class="p">()</span>
+
+    <span class="c1"># run the event loop until the user is done</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Starting event loop."</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">())</span>
+
+<span class="c1">################################################################</span>
+<span class="c1"># Main script follows.  This sequence is executed when the script is initiated from the command line.</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></tbody></table></div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&nbsp;&nbsp;<a href="https://courses.ideate.cmu.edu/16-375/f2020/text/code/lecture-samples/two-link-kinematics.html">two-link-kinematics.py</a>
+        &nbsp;&nbsp;::&nbsp;&nbsp;
+        <a class="uplink" href="https://courses.ideate.cmu.edu/16-375/f2020/text/index.html">Contents</a>
+        &nbsp;&nbsp;::&nbsp;&nbsp;
+        <a href="https://courses.ideate.cmu.edu/16-375/f2020/text/code/dblpend-simulator.html">Double Pendulum Simulator</a>&nbsp;&nbsp;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        © Copyright 2020, Garth Zeglin. Licensed under <a class="reference external" href="http://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>.
+      Last updated on 2021-01-26.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.4.
+    <a class="reference external" href="https://www.cmu.edu/legal/">University legal notice</a>.
+    </div>
+  
+</body></html>

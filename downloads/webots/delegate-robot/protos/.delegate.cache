@@ -1,0 +1,11 @@
+Webots Proto Cache File version 1.5
+protoFileHash: 7e3272eb601e5c6d7a42212e56212f60
+needsRobotAncestor: 1
+baseType: Robot
+slotType: 
+parameters: translation,rotation,controller,name,customData
+tags: 
+license:  No copyright, 2020 Garth Zeglin.  This file is explicitly placed in the public domain.
+licenseUrl: 
+documentationUrl: https://courses.ideate.cmu.edu/16-375
+info: Disembodied\ssupervisor\srobot\swhich\scan\scommunicate\sbetween\sthe\nlocal\sradio\snetwork\sand\sa\sremote\sMQTT\sserver.\s\sIt\smanages\nthe\sposition\sof\slocal\sproxy\srobots\srepresenting\sremote\sparticipants.\n

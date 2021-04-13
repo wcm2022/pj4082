@@ -1,0 +1,14 @@
+/* support for the strikeout text role defined in links.rst */
+.strike {
+  text-decoration: line-through;
+}
+
+/* fix the awkward vertical space before a sublist in a nested list */
+ol li p {
+    margin-block-end: 0pt;
+}
+
+/* fix the awkward vertical space before a sublist in a table of contents */
+ul li p {
+    margin-block-end: 0pt;
+}

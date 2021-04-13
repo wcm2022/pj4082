@@ -2,7 +2,7 @@
 <p><a href="/downloads/2020_An Engineer’s Guide to  Industrial Robot Designs.pdf">2020_An Engineer’s Guide to Industrial Robot Designs.pdf</a> (<a href="/downloads/2020_An Engineer’s Guide to  Industrial Robot Designs_zh_cn.pdf">簡體中文</a>)</p>
 <p>Repository: <a href="https://github.com/mdecourse/pj4082">https://github.com/mdecourse/pj4082</a></p>
 <p>Github Pages: <a href="https://mde.tw/pj4082">https://mde.tw/pj4082</a></p>
-<p>Heroku: <a href="https://pj4082.herokuapp.com">https://pj4082.herokuapp.com</a></p>
+<p>Heroku: <a href="https://pj4082.herokuapp.com">https://pj4082.herokuapp.com</a> (倉儲容量超過 500 MB, 已經無法 push 到 Heroku 進行同步)</p>
 <p>Discussion: <a href="https://github.com/mdecourse/pj4082/discussions">https://github.com/mdecourse/pj4082/discussions</a></p>
 <h4>組員:</h4>
 <p style="padding-left: 30px;">40823116<br/>40823131<br/>40823152<br/>40823153</p>
@@ -55,7 +55,39 @@
 <p><a href="https://elbruno.com/2015/09/14/innovation-teach-to-solve-problems-not-to-use-tools/">https://elbruno.com/2015/09/14/innovation-teach-to-solve-problems-not-to-use-tools/</a></p>
 <h4>How to teach the problem but not the tools.</h4>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/Nxqt-F4YdNY" title="YouTube video player" width="560"></iframe></p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/zIwLWfaAg-8" title="YouTube video player" width="560"></iframe></p><h1>DH Parameters</h1>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/zIwLWfaAg-8" title="YouTube video player" width="560"></iframe></p><h1>Webots</h1>
+<h4>Learning materials:</h4>
+<p style="padding-left: 30px;"><a href="https://courses.ideate.cmu.edu/16-375/f2020/text/lectures/index.html">https://courses.ideate.cmu.edu/16-375/f2020/text/lectures/index.html</a></p>
+<p style="padding-left: 30px;"><a href="https://courses.ideate.cmu.edu/16-375/f2019/text/index.html">https://courses.ideate.cmu.edu/16-375/f2019/text/index.html</a> </p>
+<p><a href="/downloads/2020_Deepbots_ A Webots-Based DeepReinforcement Learning Frameworkfor Robotics.pdf">2020_Deepbots_ A Webots-Based DeepReinforcement Learning Frameworkfor Robotics.pdf</a></p>
+<p style="padding-left: 30px;"><a href="https://github.com/aidudezzz/deepbots">https://github.com/aidudezzz/deepbots</a></p>
+<p style="padding-left: 30px;"><a href="https://github.com/aidudezzz/deepbots-tutorials">https://github.com/aidudezzz/deepbots-tutorials</a></p>
+<p style="padding-left: 30px;"><a href="https://github.com/KelvinYang0320/deepbots-RL-agent">https://github.com/KelvinYang0320/deepbots-RL-agent</a></p>
+<p>在自行建立 Robot simulator 之前, 先熟悉 Webots 架構, 查驗是否可以直接利用 Webots 執行專案.</p>
+<h4>Windows 64 位元 lite 可攜版本:</h4>
+<p style="padding-left: 30px;"><a href="http://a.kmol.info:88/webots_lite.7z">http://a.kmol.info:88/webots_lite.7z</a></p>
+<h4>Webots user guide:</h4>
+<p style="padding-left: 30px;"><a href="https://cyberbotics.com/doc/guide/index">https://cyberbotics.com/doc/guide/index</a></p>
+<h4>Webots reference manual:</h4>
+<p style="padding-left: 30px;"><a href="https://cyberbotics.com/doc/reference/index">https://cyberbotics.com/doc/reference/index</a></p>
+<h4>Webots for automobile:</h4>
+<p style="padding-left: 30px;"><a href="https://cyberbotics.com/doc/automobile/index">https://cyberbotics.com/doc/automobile/index</a></p>
+<p>執行下列 inverse_kimatics.wbt 之前必須 pip install ikpy</p>
+<p>Webots\projects\robots\abb\irb\worlds\inverse_kinematics.wbt 使用 shift + 滑鼠左鍵可以移動 Object.</p>
+<h4>Webots 容量</h4>
+<p>R2021a 版本</p>
+<p style="padding-left: 30px;">doc 目錄 587 MB</p>
+<p style="padding-left: 30px;">include 目錄 9.73 MB</p>
+<p style="padding-left: 30px;">lib 目錄 8 MB</p>
+<p style="padding-left: 30px;">msys64 目錄 701 MB</p>
+<p style="padding-left: 30px;">projects 目錄 1.03 GB</p>
+<p style="padding-left: 30px;">resources 目錄 38.4 MB</p>
+<p style="padding-left: 30px;">scripts 目錄 3.3 KB</p>
+<p style="padding-left: 30px;">src 目錄 717 KB</p>
+<p>經刪除 Webots\doc - 587 MB 以及 Webots\msys64\mingw32 - 382 MB等兩個目錄後的 webots_lite 可以從 <a href="http://a.kmol.info:88/webots_lite.7z">http://a.kmol.info:88/webots_lite.7z</a> 下載 (873 MB), 解開壓縮後約 1.77 GB, 執行 start_webots.bat 後啟動 Webots, webots_lite 所在位置不可使用中文目錄名稱.</p><h2>Compile Webots</h2>
+<p><a href="https://github.com/cyberbotics/webots/wiki">https://github.com/cyberbotics/webots/wiki</a> </p>
+<p></p>
+<p></p><h2>DH Parameters</h2>
 <h4>Kuka kr16:</h4>
 <p style="padding-left: 30px;"><a href="https://wiki.freecadweb.org/Robot_6-Axis">https://wiki.freecadweb.org/Robot_6-Axis</a></p>
 <h4>Denavit-Hartenberg Parameters</h4>
@@ -63,8 +95,7 @@
 <p><a href="/downloads/How to Find the Rotation Matrices for Robotic Arms – Automatic Addison.pdf">How to Find the Rotation Matrices for Robotic Arms – Automatic Addison.pdf</a></p>
 <p><a href="/downloads/Coding Denavit-Hartenberg Tables Using Python – Automatic Addison.pdf">Coding Denavit-Hartenberg Tables Using Python – Automatic Addison.pdf</a></p>
 <p><img alt="" height="600" src="/images/how-robotics-should-be-taught-large-light.jpg" width="800"/></p>
-<p>Image file from <a href="https://automaticaddison.com/wp-content/uploads/2020/05/how-robotics-should-be-taught-large-light.jpg">https://automaticaddison.com/wp-content/uploads/2020/05/how-robotics-should-be-taught-large-light.jpg</a></p>
-<h1>Programming</h1>
+<p>Image file from <a href="https://automaticaddison.com/wp-content/uploads/2020/05/how-robotics-should-be-taught-large-light.jpg">https://automaticaddison.com/wp-content/uploads/2020/05/how-robotics-should-be-taught-large-light.jpg</a></p><h1>Programming</h1>
 <h4>matplotlib, numpy, numpy-stl application</h4>
 <h4>render stl file:</h4>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from stl import mesh
