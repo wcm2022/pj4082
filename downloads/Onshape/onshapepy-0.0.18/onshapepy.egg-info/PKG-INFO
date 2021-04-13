@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: onshapepy
+Version: 0.0.18
+Summary: Drive part configurations from Python.
+Home-page: https://aguaclara.github.io/onshapepy/
+Author: Ethan Keller
+Author-email: UNKNOWN
+License: The MIT License (MIT)
+Description: Access OnShape part configurations from your python interpreter! Allows you to use Numpy, Scipy, and any other python packages you may need to accurately configure your part. An open source alternative to CADWolf or SwiftCalcs.
+Platform: UNKNOWN
