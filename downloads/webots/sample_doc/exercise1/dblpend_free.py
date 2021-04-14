@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# pip install pyqtgraph
 """Prototype Python 3 script for the 16-375 double-pendulum control exercise."""
 
 ################################################################
