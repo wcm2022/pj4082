@@ -134,11 +134,31 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Webots << <a href='Webots.html'>Previous</a> <a href='X3D.html'>Next</a> >> X3D<br /><h1>Compile Webots</h1>
-<p><a href="https://github.com/cyberbotics/webots/wiki">https://github.com/cyberbotics/webots/wiki</a></p>
-<p></p>
-<p></p>
-<br />Webots << <a href='Webots.html'>Previous</a> <a href='X3D.html'>Next</a> >> X3D</div>
+    <div id="tipue_search_content">Packages install << <a href='Packages install.html'>Previous</a> <br /><h1>PyGObject on Windows</h1>
+<p><strong>Install PyGObject with msys2</strong></p>
+<p>1.Run mingw64.exe from msys2</p>
+<p>2.Execute Pacman -Suy</p>
+<p>3.Execute Pacman -S mingw-w64-x86_64-gtk3 mingw-w64-x86_64-python3 mingw-w64-x86_64-python3-gobject</p>
+<p>4.Copy the wscite502 folder of the Y: drive and rename it to wscite502_msys2</p>
+<p>5.Modify line 152-157 of python.properties file in wscite502_msys2 folder to:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">if PLAT_WIN
+	python.command=Y:\msys64_20210419\mingw64\bin\pythonw
+if PLAT_GTK
+	python.command=python3
+if PLAT_MAC
+	python.command=python</pre>
+<p>6.Try to execute gtk_ex1.py in SciTE</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import gi
+ 
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk
+ 
+win = Gtk.Window()
+win.connect("destroy", Gtk.main_quit)
+win.show_all()
+Gtk.main()</pre>
+<p><img alt="" height="480" src="./../images/SciTE_1s6NIi8pmt.png" width="440"/></p>
+<p>7.Finish installation</p><br />Packages install << <a href='Packages install.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">
