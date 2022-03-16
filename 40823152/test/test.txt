@@ -1,0 +1,31 @@
+ui xml   https://www.coppeliarobotics.com/helpFiles/en/simUI-widgets.htm#table 
+about copeliasim  http://hades.mech.northwestern.edu/index.php/CoppeliaSim_Introduction
+
+ui title:視窗名稱， 
+closeable: 如果為真，視窗可關閉， 
+resizable:調整視窗大小
+tabs: 標籤小部件。 必須只包含 <tab> 子元素
+ex:
+function closeEventHandler(h)
+    sim.addLog(sim.verbosity_scriptinfos,'Window '..h..' is closing...')
+    simUI.hide(h)
+end
+
+function sysCall_init()
+    
+   xml = [[ 
+<ui title= "FIBR3D Printer Control" closeable="true" on-close="closeEventHandler" resizable="true">
+    <tabs>
+    
+    </tabs>
+
+</ui>
+]]
+
+ui=simUI.create(xml)
+
+end
+
+
+
+
