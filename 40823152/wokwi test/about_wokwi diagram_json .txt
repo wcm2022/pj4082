@@ -1,0 +1,34 @@
+about wokwi https://docs.wokwi.com/parts/wokwi-servo 
+{
+  "version": 1,  //版本1
+  "author": "40823152", //作者
+  "editor": "40823152", //編輯者
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 200, "left": 26.04, "attrs": {} },
+      //產生 uno(類型一定要是:wokwi-arduino-uno) ，id=名稱，  位置:從頂部往下200， 從左向右移動20
+    {
+      "type": "wokwi-servo", //產生伺服馬達(wokwi-servo)
+      "id": "servo x axis", //自訂義名稱
+      "top": 80,     //y軸座標，向下移動80
+      "left": 400,   //x軸座標，向右移動400
+      "attrs": { "hornColor": "black" } //顏色:黑色 (要"hornColor"才能直接打出顏色)
+    },
+    { "type": "wokwi-servo", "id": "servo y axis", "top": 200, "left": 420, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servo z axis",
+      "top": 300,
+      "left": 440,
+      "attrs": { "hornColor": "blue" }
+    }
+  ],
+  "connections": [ //連接
+    [ "uno:9", "servo x axis:PWM", "green", [ "v-60", "*", "h-60" ] ],
+    //第1個物品腳位，第二個物品腳位， 線的顏色為綠色， v-60:向上移動60，"*"為更換物品 ，h-60:向右移動60
+    [ "uno:5V", "servo x axis:V+", "red", [ "v20", "*", "h-20" ] ],
+    [ "uno:8", "servo y axis:PWM", "green", [ "v-50", "*", "h-20" ] ],
+    [ "uno:5V", "servo y axis:V+", "red", [ "v30", "*", "h-10" ] ],
+    [ "uno:7", "servo z axis:PWM", "green", [ "v-40", "*", "h-50" ] ],
+    [ "uno:5V", "servo z axis:V+", "red", [ "v30", "*", "h-10" ] ]
+  ]
+}

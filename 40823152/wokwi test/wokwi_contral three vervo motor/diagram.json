@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "author": "40823152",
+  "editor": "40823152",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 200, "left": 26.04, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servo x axis",
+      "top": 80,
+      "left": 400,
+      "attrs": { "hornColor": "black" }
+    },
+    { "type": "wokwi-servo", "id": "servo y axis", "top": 200, "left": 420, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servo z axis",
+      "top": 300,
+      "left": 440,
+      "attrs": { "hornColor": "blue" }
+    }
+  ],
+  "connections": [
+    [ "uno:9", "servo x axis:PWM", "green", [ "v-60", "*", "h-60" ] ],
+    [ "uno:5V", "servo x axis:V+", "red", [ "v20", "*", "h-20" ] ],
+    [ "uno:8", "servo y axis:PWM", "green", [ "v-50", "*", "h-20" ] ],
+    [ "uno:5V", "servo y axis:V+", "red", [ "v30", "*", "h-10" ] ],
+    [ "uno:7", "servo z axis:PWM", "green", [ "v-40", "*", "h-50" ] ],
+    [ "uno:5V", "servo z axis:V+", "red", [ "v30", "*", "h-10" ] ]
+  ]
+}
