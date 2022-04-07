@@ -1,6 +1,6 @@
 <!DOCTYPE html><html>
         <head>
-        <title>Project 4082</title>
+        <title>project 4082</title>
         <meta charset="utf-8">
 <meta property="head" content="H1">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,6 +35,9 @@
         <script src="tipuesearch_content.js"></script>
         <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
         <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 -->
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
         <script>
             /* original tipuesearch
             $(document).ready(function() {
@@ -62,11 +65,13 @@
 <script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
 <script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
 <script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
 <script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
 <script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
 <script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
 <script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
 <script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
 <link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
 <script type="text/javascript">SyntaxHighlighter.all();</script>
 <!-- 暫時不用
@@ -87,7 +92,7 @@ img.add_border {
 
 </head>
 <body>
-<div class='container'><nav>
+<div class='container-fluid'><nav>
         
     <div class="site-wrap">
 
@@ -103,14 +108,14 @@ img.add_border {
             <header class="site-navbar py-4 bg-white" role="banner">
               <div class="container-fluid">
                 <div class="row align-items-center">
-                <h1>Project 4082</h1>
+                <h1>3d 列印機電模擬系統在 uArm 機械手臂設計流程上的應用</h1>
                 <div class="pl-4">
                     <form>
                     <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
                     </form>
                 </div>
                   <!-- <div class="col-11 col-xl-2">
-                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">Project 4082</a></h1> 
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">3d 列印機電模擬系統在 uArm 機械手臂設計流程上的應用</a></h1> 
                   </div>
                   -->
                   <div class="col-12 col-md-10 d-none d-xl-block">
@@ -123,7 +128,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='Task1.html'>Task1</a></li></ul><li class='has-children'><a href='CAD.html'>CAD</a><ul class='dropdown'><li><a href='Teach.html'>Teach</a></li></ul><li class='has-children'><a href='Webots.html'>Webots</a><ul class='dropdown'><li><a href='Compile Webots.html'>Compile Webots</a><li><a href='X3D.html'>X3D</a><li><a href='DH Parameters.html'>DH Parameters</a></li></ul><li class='has-children'><a href='Programming.html'>Programming</a><ul class='dropdown'><li><a href='Onshape.html'>Onshape</a></li></ul><li class='has-children'><a href='Packages install.html'>Packages install</a><ul class='dropdown'><li><a href='PyGObject on Windows.html'>PyGObject on Windows</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='Reference.html'>Reference</a><ul class='dropdown'><li><a href='Task1.html'>Task1</a><li class='has-children'><a href='CAD.html'>CAD</a><ul class='dropdown'><li><a href='Teach.html'>Teach</a></li></ul><li class='has-children'><a href='Webots.html'>Webots</a><ul class='dropdown'><li><a href='Compile Webots.html'>Compile Webots</a><li><a href='X3D.html'>X3D</a></li></ul><li><a href='DH Parameters.html'>DH Parameters</a><li class='has-children'><a href='Programming.html'>Programming</a><ul class='dropdown'><li><a href='Onshape.html'>Onshape</a></li></ul><li class='has-children'><a href='Packages install.html'>Packages install</a><ul class='dropdown'><li><a href='PyGObject on Windows.html'>PyGObject on Windows</a></li>
                       </ul>
                 </nav>
               </div>
@@ -134,44 +139,12 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content"> <a href='Task1.html'>Next</a> >> Task1<br /><h1>About</h1>
-<p><a href="./../downloads/2020_An Engineer’s Guide to  Industrial Robot Designs.pdf">2020_An Engineer’s Guide to Industrial Robot Designs.pdf</a> (<a href="./../downloads/2020_An Engineer’s Guide to  Industrial Robot Designs_zh_cn.pdf">簡體中文</a>)</p>
-<p>Repository: <a href="https://github.com/mdecourse/pj4082">https://github.com/mdecourse/pj4082</a></p>
-<p>Github Pages: <a href="https://mde.tw/pj4082">https://mde.tw/pj4082</a></p>
-<p>Heroku: <a href="https://pj4082.herokuapp.com">https://pj4082.herokuapp.com</a> (以倉儲容量壓縮檔案計算, 若超過 500 MB, 將無法 push 到 Heroku 進行同步)</p>
-<p>Discussion: <a href="https://github.com/mdecourse/pj4082/discussions">https://github.com/mdecourse/pj4082/discussions</a></p>
+    <div id="tipue_search_content"> <a href='Reference.html'>Next</a> >> Reference<br /><h1>About</h1>
+<p>3d 列印機電模擬系統在 uArm 機械手臂設計流程上的應用</p>
+<p>The Application of 3D Printing Mechatronic Simulation System in the Design Process of uArm Robotic Arm</p>
 <h4>組員:</h4>
 <p style="padding-left: 30px;">40823116<br/>40823131<br/>40823152<br/>40823153</p>
-<p>繼平面機構合成與分析套件的開發 (<a href="https://github.com/mdecourse/ps2020">https://github.com/mdecourse/ps2020</a>) 後, Project 4082 希望可以開發用於計算機程式, 網際內容管理, 電腦輔助設計實習與協同產品設計實習課程使用的:</p>
-<p>機器手臂模擬套件, 也就是 Six-axis Robotic Arm Simulator.</p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/wZQ0uriwApY" title="YouTube video player" width="560"></iframe></p>
-<h4>Reference:</h4>
-<p style="padding-left: 30px;"><a href="./../downloads/1999_modeling_of_industrial_robot.pdf">1999_modeling_of_industrial_robot.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2001_Kinematic Calibration Procedure for Serial Robotswith Six Revolute Axes.pdf">2001_Kinematic Calibration Procedure for Serial Robotswith Six Revolute Axes.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2002_Forward and Inverse Kinematics Models  for a 5-dof Pioneer 2 Robot Arm .pdf">2002_Forward and Inverse Kinematics Models for a 5-dof Pioneer 2 Robot Arm .pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2007_On Modeling and Control of FlexibleManipulators.pdf">2007_On Modeling and Control of FlexibleManipulators.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2008_Design Optimization in Industrial Robotics.pdf">2008_Design Optimization in Industrial Robotics.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2010_modeling and Control of FlexibleManipulators.pdf">2010_modeling and Control of FlexibleManipulators.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2011_Vision Based 3-D Position Control for a Robot Arm.pdf">2011_Vision Based 3-D Position Control for a Robot Arm.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2011_Development of a Model-Based Control System forthe Gantry-Tau Parallel Kinematic Machine.pdf">2011_Development of a Model-Based Control System forthe Gantry-Tau Parallel Kinematic Machine.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2012_Concept design of an ultra-lightindustrial robot.pdf">2012_Concept design of an ultra-lightindustrial robot.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2014_Design, Implementation and Control of aRobotic Arm Using PIC 16F877A Microcontroller.pdf">2014_Design, Implementation and Control of aRobotic Arm Using PIC 16F877A Microcontroller.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2014_Kinematic analysis and simulation of a new-type robotwith special structure.pdf">2014_Kinematic analysis and simulation of a new-type robotwith special structure.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2015_Kinematic Calibration of Six-Axis Robots.pdf">2015_Kinematic Calibration of Six-Axis Robots.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2016_Design and Structural Analysis of a Robotic Arm.pdf">2016_Design and Structural Analysis of a Robotic Arm.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2018_Robot Racking.pdf">2018_Robot Racking.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2018_The parameter identification model consideringboth geometric parameters and joint stiffness.pfd.pdf">2018_The parameter identification model consideringboth geometric parameters and joint stiffness.pfd.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2019_Modeling techniques for kinematic analysis of a six-axis robotic arm.pdf">2019_Modeling techniques for kinematic analysis of a six-axis robotic arm.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2019_Kinematic and Dynamic Analysis of an IndustrialSix-Axis Robotic Manipulator.pdf">2019_Kinematic and Dynamic Analysis of an IndustrialSix-Axis Robotic Manipulator.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2019_Milling accuracy improvement of a 6-axis industrial robot through dynamic analysis.pdf">2019_Milling accuracy improvement of a 6-axis industrial robot through dynamic analysis.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2019_Modelling, Identification and Controlof a 5-DOF Shotcrete Robot.pdf">/downloads/2019_Modelling, Identification and Controlof a 5-DOF Shotcrete Robot.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2020_Design, simulation, and analysis of a 6-axis robot using robot visualization software.pdf">2020_Design, simulation, and analysis of a 6-axis robot using robot visualization software.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2020_Modeling and Control of6-axis Robot Arm.pdf">2020_Modeling and Control of6-axis Robot Arm.pdf</a></p>
-<p style="padding-left: 30px;"><a href="./../downloads/2020_Shape Design Optimization of a Robot Arm Using aSurrogate-Based Evolutionary Approach.pdf">2020_Shape Design Optimization of a Robot Arm Using aSurrogate-Based Evolutionary Approach.pdf</a></p>
-<p style="padding-left: 30px;"><a href="https://github.com/HbirdJ/RoboND-Kinematics-Project">https://github.com/HbirdJ/RoboND-Kinematics-Project</a> (DH calculator)</p>
-<p style="padding-left: 30px;">Kuk kr16 cad files: <a href="https://grabcad.com/library/kuka-kr16-industrial-robotic-arm-1">https://grabcad.com/library/kuka-kr16-industrial-robotic-arm-1</a></p>
-<p style="padding-left: 30px;">Podcast: <a href="/get_page/About/Understanding and solving industrial robot design challenges">Understanding and solving industrial robot design challenges</a></p>
-<br /> <a href='Task1.html'>Next</a> >> Task1</div>
+<br /> <a href='Reference.html'>Next</a> >> Reference</div>
         
     <!-- footer -->
       <div class="container">
