@@ -1,0 +1,1336 @@
+﻿STEP to UG
+! INFO-     NX STEP AP203 - V12.0
+! INFO-      
+! INFO-     Start of Translation: 11-APR-2022  10:16:44 PM
+! INFO-      
+! STATUS-   Converting Part: E:\downloads\uarm_parts\cd2022_uarm\UTF8_uArmSwiftPro_UP1300_3D.STEP
+STEP to UG
+! INFO-     NX STEP AP203 - V12.0
+! INFO-      
+! INFO-     Start of Translation: 11-APR-2022  10:26:49 PM
+! INFO-      
+! STATUS-   Converting Part: E:\downloads\uarm_parts\cd2022_uarm\UTF8_uArmSwiftPro_UP1300_3D.STEP
+STEP to UG
+! INFO-     NX STEP AP214 - V12.0
+! INFO-      
+! INFO-     Start of Translation: 11-APR-2022  10:45:06 PM
+! INFO-      
+! STATUS-   Converting Part: E:\downloads\uarm_parts\cd2022_uarm\UTF8_uArmSwiftPro_UP1300_3D.STEP
+STEP to UG
+! INFO-     NX STEP AP203 - V12.0
+! INFO-      
+! INFO-     Start of Translation: 11-APR-2022  10:49:07 PM
+! INFO-      
+! STATUS-   Converting Part: E:\downloads\uarm_parts\cd2022_uarm\UTF8_uArmSwiftPro_UP1300_3D.STEP
+STEP to UG
+! INFO-     NX STEP AP203 - V12.0
+! INFO-      
+! INFO-     Start of Translation: 11-APR-2022  10:49:20 PM
+! INFO-      
+! STATUS-   Converting Part: E:\downloads\uarm_parts\cd2022_uarm\UTF8_uArmSwiftPro_UP1300_3D.STEP
+STEP to UG
+! INFO-     NX STEP AP203 - V12.0
+! INFO-      
+! INFO-     Start of Translation: 11-APR-2022  11:04:31 PM
+! INFO-      
+! STATUS-   Converting Part: E:\downloads\uarm_parts\cd2022_uarm\UTF8_uArmSwiftPro_UP1300_3D.STEP
+! SUMMARY-   
+! SUMMARY-    STEP Header Information
+! SUMMARY-   
+! SUMMARY-  Description      STEP AP203
+! SUMMARY-  Imp_Level        1
+! SUMMARY-  File_Name        uArmSwiftPro(UP1300)3D文件.STEP
+! SUMMARY-  Date             2018-04-21T03:06:53
+! SUMMARY-  Author           Unknown
+! SUMMARY-  Organization     Unknown
+! SUMMARY-  Pre_Version      SwSTEP 2.0
+! SUMMARY-  Orig_System      SolidWorks 2014
+! SUMMARY-  Authorization    Unknown
+! SUMMARY-  Schema_ID        ap203_configuration_controlled_3d_design_of_mechanical_parts_and_assemblies_mim_lf
+! SUMMARY-   
+! SUMMARY-    Summary of STEP Entities
+! SUMMARY-   
+! SUMMARY-  Entity Type                                                   Count
+! SUMMARY-  -----------                                                   ------
+! SUMMARY-  advanced_face ..............................................:   3135
+! SUMMARY-  application_context ........................................:    126
+! SUMMARY-  approval ...................................................:    339
+! SUMMARY-  approval_date_time .........................................:    339
+! SUMMARY-  approval_person_organization ...............................:    339
+! SUMMARY-  approval_role ..............................................:    339
+! SUMMARY-  approval_status ............................................:    339
+! SUMMARY-  axis2_placement_3d .........................................:   5103
+! SUMMARY-  b_spline_curve_with_knots ..................................:    291
+! SUMMARY-  b_spline_curve_with_knots_and_rational_b_spline_curve ......:     54
+! SUMMARY-  b_spline_surface_with_knots ................................:    114
+! SUMMARY-  b_spline_surface_with_knots_and_rational_b_spline_surface ..:     11
+! SUMMARY-  calendar_date ..............................................:    615
+! SUMMARY-  cartesian_point ............................................:  23048
+! SUMMARY-  cc_design_approval .........................................:    339
+! SUMMARY-  cc_design_date_and_time_assignment .........................:    276
+! SUMMARY-  cc_design_person_and_organization_assignment ...............:    465
+! SUMMARY-  cc_design_security_classification ..........................:    213
+! SUMMARY-  circle .....................................................:   1936
+! SUMMARY-  closed_shell ...............................................:     58
+! SUMMARY-  conical_surface ............................................:    363
+! SUMMARY-  context_dependent_shape_representation .....................:    150
+! SUMMARY-  coordinated_universal_time_offset ..........................:    615
+! SUMMARY-  cylindrical_surface ........................................:    806
+! SUMMARY-  date_and_time ..............................................:    615
+! SUMMARY-  date_time_role .............................................:    276
+! SUMMARY-  design_context .............................................:     63
+! SUMMARY-  direction ..................................................:  15309
+! SUMMARY-  edge_curve .................................................:   7384
+! SUMMARY-  edge_loop ..................................................:   4043
+! SUMMARY-  face_bound .................................................:    587
+! SUMMARY-  face_outer_bound ...........................................:   3456
+! SUMMARY-  geometric_representation_context_and_global_uncertainty_a ..:     63
+! SUMMARY-  item_defined_transformation ................................:    150
+! SUMMARY-  length_unit_and_si_unit ....................................:     63
+! SUMMARY-  line .......................................................:   5103
+! SUMMARY-  local_time .................................................:    615
+! SUMMARY-  manifold_solid_brep ........................................:     58
+! SUMMARY-  mechanical_context .........................................:     63
+! SUMMARY-  next_assembly_usage_occurrence .............................:    150
+! SUMMARY-  organization ...............................................:    151
+! SUMMARY-  oriented_edge ..............................................:  14768
+! SUMMARY-  person .....................................................:    151
+! SUMMARY-  person_and_organization ....................................:    654
+! SUMMARY-  person_and_organization_role ...............................:    465
+! SUMMARY-  plane ......................................................:   1841
+! SUMMARY-  plane_angle_unit_and_si_unit ...............................:     63
+! SUMMARY-  product ....................................................:     63
+! SUMMARY-  product_definition .........................................:     63
+! SUMMARY-  product_definition_formation_with_specified_source .........:     63
+! SUMMARY-  product_definition_shape ...................................:    213
+! SUMMARY-  product_related_product_category ...........................:     63
+! SUMMARY-  representation_relationship_with_transformation_and_shape ..:    150
+! SUMMARY-  security_classification ....................................:    213
+! SUMMARY-  security_classification_level ..............................:    213
+! SUMMARY-  shape_representation .......................................:     63
+! SUMMARY-  si_unit_and_solid_angle_unit ...............................:     63
+! SUMMARY-  uncertainty_measure_with_unit ..............................:     63
+! SUMMARY-  vector .....................................................:   5103
+! SUMMARY-  vertex_point ...............................................:   4969
+! SUMMARY-                                                               -------
+! SUMMARY-  Total                                                         106806
+! STATUS-    
+! STATUS-   Converting to Output Form (Phase 2 of 3): 11-APR-2022 11:04:31 PM
+! STATUS-    
+! INFO-     CV0305 The entities referenced by a context_dependant_shape_rep are
+! INFO-       not coded as to STEP Part 43 requirements.  The references to the
+! INFO-       component and assembly pieces is out of order.  We will attempt
+! INFO-       to correct this with the given data.  This problem should be
+! INFO-       reported to the translator vendor whose product generated this
+! INFO-       STEP file.  If we are unable to rectify this problem the
+! INFO-       components may be positioned incorrectly.
+! INFO-      
+! STATUS-    
+! STATUS-   Generating UG geometry and placing them in parts
+! STATUS-    
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:32 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 92850
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\4mm铝支撑柱
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:32 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 54512
+! STATUS-    
+! STATUS-   fixing vertex and/or edge off surface faults
+! STATUS-    
+! STATUS-   fixing self-intersecting topology faults
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! WARNING-  solid body contains fault: 13804 - RTSTSX: Self-intersecting topology.
+! WARNING-  solid body (输入1) contains faults that could not be corrected
+! WARNING-   
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\输出轴（两侧电机）
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:32 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 94196
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\M4X5 顶丝
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:33 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 22890
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\5-13-4轴承1
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:33 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 19553
+! STATUS-    
+! STATUS-   fixing vertex and/or edge off surface faults
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\右侧曲柄
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:33 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 43331
+! STATUS-    
+! STATUS-   fixing vertex and/or edge off surface faults
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\轴承支撑轴
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:33 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 86846
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\底座上盖 贴纸
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:34 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 59128
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\磁编码器PCB
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:34 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 98860
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\M4X10 平头螺丝
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:34 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 78311
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\M3X5 扁平头铁镀镍螺丝
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:34 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 70370
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\电源按键
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:34 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 28803
+! STATUS-    
+! STATUS-   fixing vertex and/or edge off surface faults
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\铰链
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:34 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 81620
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\8.3X1.5 防滑垫
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:35 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 35378
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\M2X4螺丝
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:35 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 46651
+! STATUS-    
+! STATUS-   fixing vertex and/or edge off surface faults
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\减速箱下壳（两侧电机）
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:35 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 33476
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\M3X6 内六角圆头螺丝
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:35 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 22282
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\MF84
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:35 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 68414
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\M3X15 双通螺柱
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:35 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 9597
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\切换按键
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:36 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 83556
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\按钮
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:36 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 57202
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\三角形连杆轴承压紧件
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:36 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 63791
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\末端PCB
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:36 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 64398
+! STATUS-    
+! STATUS-   fixing vertex and/or edge off surface faults
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\前端通用件
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:37 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 61081
+! STATUS-    
+! STATUS-   fixing vertex and/or edge off surface faults
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\底座上盖
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:37 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 65731
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\末端连杆
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:37 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 38091
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\按键帽（短）
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:37 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 73633
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\L型连接件（一体化）
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:37 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 12892
+! STATUS-    
+! STATUS-   fixing vertex and/or edge off surface faults
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\前端关节
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:38 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 20926
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\2mm导热硅胶片
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:38 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 41394
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\减速箱上壳（两侧）
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:38 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 30157
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\2mm导光柱
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:38 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 106826
+! STATUS-    
+! STATUS-   fixing vertex and/or edge off surface faults
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\电机轴承支撑座（左侧）
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:38 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 86242
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\M3X5 沉头螺丝
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:38 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 74993
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\3Dprint 转接板
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:39 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 56468
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\M3X4 内六角圆头螺丝
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:39 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 49298
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\右侧连杆
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:39 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 102131
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\3mm铝支撑柱
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:39 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 44686
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\三角形连杆
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:39 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 25542
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\底座中间部分
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:39 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 99462
+! STATUS-    
+! STATUS-   fixing vertex and/or edge off surface faults
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\主臂关节1
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:40 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 10941
+! STATUS-    
+! STATUS-   fixing vertex and/or edge off surface faults
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\主臂关节2
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:40 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 17620
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\7mm 支撑柱
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:40 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 71688
+! STATUS-    
+! STATUS-   fixing vertex and/or edge off surface faults
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\导光件
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:40 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 27470
+! STATUS-    
+! STATUS-   fixing vertex and/or edge off surface faults
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! WARNING-  solid body contains fault: 13825 - RTSTMV: Missing vertex at surface singularity.
+! WARNING-  solid body (输入1) contains faults that could not be corrected
+! WARNING-   
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\底座盖
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:41 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 42002
+! STATUS-    
+! STATUS-   fixing vertex and/or edge off surface faults
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\轴承支撑圈
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:41 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 67082
+! STATUS-    
+! STATUS-   fixing self-intersecting topology faults
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! WARNING-  solid body contains fault: 13804 - RTSTSX: Self-intersecting topology.
+! WARNING-  solid body (输入1) contains faults that could not be corrected
+! WARNING-   
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\电机轴承支撑座（右侧）
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:41 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 2986
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\主臂关节2贴纸（Pro）
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:41 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 90925
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\M3X5 平头螺丝
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:42 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 32140
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\M3X5 内六角圆头螺丝
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:42 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 55871
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\47X30X9 轴承
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:42 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 84894
+! STATUS-    
+! STATUS-   fixing vertex and/or edge off surface faults
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\塑料盖板
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:42 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 47960
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\M4X6 沉头螺丝
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:42 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 14256
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\6X2.5 磁铁
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:42 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 18956
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\M4X15 平头螺丝
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:42 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 104107
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\左侧连杆
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:43 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 87601
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\M3X5 圆头黑色十字螺丝
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:43 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 38712
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\42步进电机
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:43 PM
+! STATUS-    
+! STATUS-   Creating UG solid body from Input Ent Id 105472
+! STATUS-    
+! STATUS-   simplifying Bsplines to analytics
+! STATUS-    
+! STATUS-   converting tolerant edges into exact edges
+! STATUS-    
+! STATUS-   doing final check of body to report any faults
+! STATUS-    
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\M4X7 平头螺丝
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Solid .......................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:43 PM
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\气泵装配体（扎带方案）
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Component ...................:     1
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              1
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:43 PM
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\42+ 1：4.5减速箱（底座）
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Component ...................:     3
+! SUMMARY-                                 -----
+! SUMMARY-  Total                              3
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:44 PM
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\底盖装配体
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Component ...................:    28
+! SUMMARY-                                 -----
+! SUMMARY-  Total                             28
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:44 PM
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\42+ 1：4.5减速箱（左右两侧）
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Component ...................:    10
+! SUMMARY-                                 -----
+! SUMMARY-  Total                             10
+! STATUS-   Creating the UG part (Phase 3 of 3): 11-APR-2022  11:04:44 PM
+! INFO-     Filing Part ..: E:\downloads\uarm_parts\cd2022_uarm\UTF8_uArmSwiftPro_UP1300_3D_step.prt
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-   
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Component ...................:   108
+! SUMMARY-                                 -----
+! SUMMARY-  Total                            108
+! INFO-      
+! INFO-     Total number of solids input for this translation       :        58
+! INFO-      
+! INFO-     Number of solids created without body validation faults :        55
+! INFO-      
+! INFO-     Number of solids created with body validation fault(s)  :         3
+! INFO-      
+! INFO-     Number of solids ending up as sheet bodies              :         0
+! INFO-      
+! INFO-     End of Translation: 11-APR-2022  11:04:44 PM
+! INFO-      
